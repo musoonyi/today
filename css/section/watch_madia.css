@@ -1,0 +1,864 @@
+@media (max-width: 1440px){
+    .container{
+        width: 100%;
+        max-width: 100%;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    .header{
+        padding: 10px 50px 10px 0;
+    }
+    .header .header_tit{
+        font-size: 48px;
+        margin-left: 60px;
+    }
+    .pick_wrap{
+        width: 100%;
+        max-width: 100%;
+    }
+    .ott_list{
+        width: 100%;
+        max-width: 100%;
+    }
+    .footer {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+    .footer_top {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+        padding: 24px 20px;
+        border-bottom: 1px solid #cfcfcf;
+        border-top: 1px solid #cfcfcf;
+        align-items: flex-start;
+    }
+
+    
+    
+}
+@media(max-width: 1200px){
+    .footer_top{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px){
+    .container{
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .header{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+    .header .header_tit{
+        font-size: 38px;
+        margin-left: 20px;
+    }
+    .header .header_search{
+        width: 200px;
+        height: 44px;
+    }
+    .header .Light{
+        position: sticky;
+    }
+    #mainBanner .swiper-slide img{
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+    }
+    section .title{
+        font-size: 24px;
+    }
+    .pick_wrap{
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+    .review{
+        height: auto;
+    }
+    .reviewSwiper{
+        height: auto !important;
+    }
+    .reviewSwiper .swiper-wrapper{
+        height: auto !important;
+    }
+    .reviewSwiper .swiper-slide{
+        flex-direction: column;
+        align-items: center;
+        height: auto !important;
+        padding: 20px;
+        gap: 16px;
+    }
+    .reviewSwiper .poster img{
+        width: 200px;
+        height: auto;
+    }
+    .reviewSwiper .info{
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+    .reviewSwiper .info h2{
+        font-size: 32px;
+    }
+    .reviewSwiper .info h3{
+        font-size: 20px;
+    }
+    .reviewSwiper .detail{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-left: 0;
+    }
+    .tag_wrap{
+        justify-content: center;
+    }
+    .ott_list{
+        width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 12px;
+        justify-content: center;
+    }
+    .ott_list .ott_box{
+        margin-left: 0;
+    }
+     .footer {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+    .footer_top {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+        padding: 24px 20px;
+        border-bottom: 1px solid #cfcfcf;
+        border-top: 1px solid #cfcfcf;
+        align-items: flex-start;
+    }
+    .footer_logo {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #cfcfcf;
+    }
+    .footer_icons {
+        /* gap: 16px; */
+        /* display: flex; */
+        justify-content: space-evenly;
+        margin-bottom: 15px;
+    }
+    .footer_icons li{
+        text-align: center;
+    }
+    .footer_menu {
+        width: calc(50% - 10px);
+        gap: 6px;
+    }
+    .footer_menu h3 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+    .footer_menu a {
+        font-size: 12px;
+        margin-bottom: -6px;
+    }
+    .footer_middle {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .newsletter {
+        width: 100%;
+    }
+    .input_box {
+        width: 100%;
+        display: flex;
+    }
+    .input_box input {
+        flex: 1;
+        width: auto;
+    }
+    .footer_bottom {
+        padding: 0 20px;
+        height: 70px;
+        box-sizing: border-box;
+    }
+    .top_btn {
+        margin-right: 0;
+    }
+    .subfooter {
+        height: auto;
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    .header .header_tit{
+        font-size: 30px;
+        margin: 0;
+    }
+    .header .header_search{
+        width: 100%;
+        max-width: 400px;
+        margin-top: 5px;
+    }
+    .header .Light{
+        width: 40px;
+        position: absolute;
+    }
+    #mainBanner{
+        padding-top: 20px;
+    }
+    #mainBanner .swiper-slide img{
+        width: 100%;
+        height: 300px;
+    }
+    #mainBanner .swiper-slide span{
+        font-size: 50px;
+    }
+    #mainBanner .s4 span{
+        font-size: 40px;
+        left: 50px;
+    }
+    #mainBanner .s7 span{
+        font-size: 40px;
+        left: 40px;
+    }
+    section .title{
+        font-size: 22px;
+    }
+    .reviewSwiper .poster{
+        margin-left: 70px;
+    }
+    .reviewSwiper .poster img{
+        width: 180px;
+    }
+    .reviewSwiper .info{
+        width: 100%;
+        padding: 0 10px;    
+    }
+    .reviewSwiper .info h2{
+        font-size: 30px;
+    }
+    .reviewSwiper .info h3{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .reviewSwiper .swiper-slide{
+        flex-direction: column;
+        align-items: center;         
+        text-align: center;
+    }
+    .reviewSwiper .info .story{
+        margin-left: 50px;
+        margin-top: 15px;
+    }
+    .reviewSwiper .story{
+        text-align: left;      
+        line-height: 1.8;       
+        border-left: 3px solid #ae83c9; 
+        padding-left: 12px;      
+    }
+    .reviewSwiper .tag_wrap{
+        margin-top: 15px;
+    }
+    .ott_list{
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        gap: 15px;
+    }
+    .ott_list .ott_box{
+        margin-left: 0;
+    }
+     .footer {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer_top {
+        /* flex-direction: column; */
+        height: auto;
+        gap: 12px;
+        padding: 20px 16px;
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    .footer_logo { width: 100%; }
+
+    .footer_icons { gap: 14px; }
+    .footer_icons i { font-size: 20px; }
+
+    .footer_menu {
+        width: 48%;
+    }
+
+    .footer_menu h3 { font-size: 16px; margin-bottom: 2px; }
+    .footer_menu a { font-size: 13px; margin-bottom: -6px; }
+
+    .footer_middle {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .company_info { font-size: 11px; line-height: 1.8; }
+
+    .newsletter { width: 100%; }
+    .newsletter h4 { font-size: 14px; }
+
+    .input_box { width: 80%; display: flex; }
+    .input_box input { flex: 1; width: auto; }
+
+    .footer_bottom {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px 16px;
+        height: auto;
+        min-height: 60px;
+        box-sizing: border-box;
+    }
+    .footer_bottom p { font-size: 12px; }
+    .footer_link a { font-size: 12px; }
+    .top_btn { margin-right: 0; margin-top: 0; }
+    .subfooter { height: auto; min-height: 60px; }
+}
+@media (max-width: 640px) {
+    .footer_icons i { font-size: 19px; }
+    .company_info { font-size: 11px; }
+    .reviewSwiper .info .story{
+        margin-left: 0;
+    }
+}
+    
+@media (max-width: 576px) {
+    .footer_icons { gap: 10px; }
+    .footer_icons i { font-size: 18.5px; }
+    .footer_bottom p { font-size: 11.5px; }
+}    
+
+@media (max-width: 480px){
+    .header .logo a img{
+        width: 140px;
+    }
+    .header .header_tit{
+        font-size: 22px;
+    }
+    .header .header_search{
+        height: 42px;
+        margin-top: 20px;
+    }
+    .header .Light{
+        width: 30px;
+    }
+    .bannerSwiper .swiper-slide img{
+        object-fit: cover;
+        object-position: right;
+    }
+    .bannerSwiper .s4 img{
+        object-position: center;
+    }
+    #mainBanner .swiper-slide span{
+        font-size: 32px;
+    }
+    #mainBanner .s1 span{
+        left: 150px;
+        top: 60px;
+    }
+    #mainBanner .s2 span{
+        left: 230px;
+        top: 200px;
+    }
+    #mainBanner .s3 span{
+        left: 180px;
+        top: 220px;
+    }
+    #mainBanner .s4 span{
+        left: 50px;
+        top: 220px;
+    }
+    #mainBanner .s5 span{
+        left: 180px;
+        top: 130px;
+    }
+    #mainBanner .s6 span{
+        left: 50px;
+        top: 220px;
+    }
+    #mainBanner .s7 span{
+        left: 50px;
+        top: 220px;
+    }
+    section .title{
+        font-size: 18px;
+    }
+    .reviewSwiper .poster{
+        margin-left: 100px;
+    }
+    .reviewSwiper .poster img{
+        width: 150px;
+    }
+    .reviewSwiper .info h2{
+        font-size: 24px;
+    }
+    .reviewSwiper .info h3{
+        font-size: 18px;
+    }
+    .reviewSwiper .info p{
+        margin-left: 0;
+    }
+    .reviewSwiper .story{
+        font-size: 13px;
+    }
+    .footer_icons { gap: 8px; }
+    .footer_icons span { font-size: 10px; }
+    .footer_icons i { font-size: 18px; }
+    .input_box input { flex: 1; width: 50px; }
+    .footer_bottom p { font-size: 11px; }
+    .footer_link { gap: 12px; }
+    .footer_link a { font-size: 11px; }
+}
+@media (max-width: 380px){
+    /* 헤더 */
+    .header{
+        padding: 16px;
+        gap: 10px;
+    }
+    .header .logo a img{
+        width: 110px;
+    }
+    .header .header_tit{
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .header .header_search{
+        margin-top: 40px;
+        width: 100%;
+        height: 38px;
+    }
+    .header .header_search .input_text{
+        font-size: 12px;
+    }
+    .header .Light{
+        width: 24px;
+    }
+    .header .Light::before{
+        background-size: 25px;
+    }
+
+    /* 메인배너 */
+    #mainBanner .swiper-slide img{
+        height: 200px;
+    }
+    #mainBanner .swiper-slide span{
+        font-size: 0;
+    }
+    /* 공통 섹션 타이틀 */
+    section .title{
+        font-size: 15px;
+    }
+
+    /* TOP10 */
+    .top10Swiper .swiper-slide{
+        width: 100px;
+    }
+    .top10Swiper .swiper-slide .txt{
+        height: 50px;
+    }
+    .top10Swiper .swiper-slide .txt span{
+        font-size: 11px;
+    }
+    .top10Swiper .swiper-slide .txt p{
+        font-size: 10px;
+    }
+
+    /* 리뷰 */
+    .pick_wrap{
+        padding: 8px;
+        height: auto;
+    }
+    .review{
+        height: auto;
+    }
+    .reviewSwiper{
+        height: auto !important;
+    }
+    .reviewSwiper .swiper-wrapper{
+        height: auto !important;
+    }
+    .reviewSwiper .swiper-slide{
+        flex-direction: column;
+        align-items: center;
+        height: auto !important;
+        padding: 12px;
+        gap: 12px;
+    }
+    .reviewSwiper .info{
+        width: 100%;
+        text-align: center;
+    }
+    .reviewSwiper .info h2{
+        font-size: 20px;
+    }
+    .reviewSwiper .info h3{
+        font-size: 15px;
+    }
+    .reviewSwiper .story{
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    .reviewSwiper .rating{
+        font-size: 13px;
+    }
+    .reviewSwiper .genre{
+        font-size: 12px;
+    }
+    .tag_wrap{
+        justify-content: center;
+        gap: 6px;
+    }
+    .tag_wrap span{
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+    .reviewSwiper .detail{
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+        padding: 10px;
+        margin-left: 0;
+    }
+    .reviewSwiper .detail button{
+        width: 100%;
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+    /* 카드 슬라이더 공통 */
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .swiper-slide{
+        width: 100px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) img{
+        width: 100px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .txt{
+        width: 100px;
+        height: 50px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .txt span{
+        font-size: 10px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .txt p{
+        font-size: 10px;
+    }
+
+    /* OTT */
+    .ott_list{
+        gap: 10px;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ott_list .ott_box img{
+        width: 100%;
+        max-width: 140px;
+    }
+
+    /* 푸터 */
+    .footer_logo {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #cfcfcf;
+    }
+    .footer_icons {
+        justify-content: space-evenly;
+        margin-bottom: 15px;
+        gap: 8px;
+    }
+    .footer_icons li{
+        text-align: center;
+    }
+    .footer_icons span { font-size: 10px; }
+    .footer_icons i { font-size: 18px; }
+    .footer_menu {
+        width: calc(50% - 10px);
+        gap: 6px;
+    }
+    .footer_menu h3 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+    .footer_menu a {
+        font-size: 12px;
+        margin-bottom: -6px;
+    }
+    .footer_middle {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .company_info{
+        font-size: 11px;
+    }
+    .footer_bottom p { font-size: 11px; }
+    .footer_link { gap: 12px; }
+    .footer_link a { font-size: 11px; }
+}
+@media (max-width: 360px) {
+.footer_menu {
+        width: 45%;
+    }
+}
+@media (max-width: 320px){
+    /* 헤더 */
+    .header{
+        padding: 12px;
+        gap: 8px;
+    }
+    .header .logo a img{
+        width: 90px;
+    }
+    .header .header_tit{
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+    .header .header_search{
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+    }
+    .header .header_search .input_text{
+        font-size: 11px;
+    }
+    .header .header_search .sch{
+        font-size: 18px;
+    }
+    .header .Light{
+        width: 20px;
+    }
+
+    /* 메인배너 */
+    #mainBanner .swiper-slide img{
+        height: 160px;
+    }
+
+    /* 공통 섹션 타이틀 */
+    section .title{
+        font-size: 13px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* TOP10 */
+    .top10Swiper .swiper-slide{
+        width: 85px;
+    }
+    .top10Swiper .swiper-slide .txt{
+        height: 45px;
+    }
+    .top10Swiper .swiper-slide .txt span{
+        font-size: 10px;
+    }
+    .top10Swiper .swiper-slide .txt p{
+        font-size: 9px;
+    }
+
+    /* 리뷰 */
+    .pick_wrap{
+        padding: 6px;
+        height: auto;
+    }
+    .review{
+        height: auto;
+    }
+    .reviewSwiper{
+        height: auto !important;
+    }
+    .reviewSwiper .swiper-wrapper{
+        height: auto !important;
+    }
+    .reviewSwiper .swiper-slide{
+        flex-direction: column;
+        align-items: center;
+        height: auto !important;
+        padding: 10px;
+        gap: 10px;
+    }
+    .reviewSwiper .poster img{
+        width: 100px;
+        margin-left: 25px;
+    }
+    .reviewSwiper .info{
+        width: 100%;
+        text-align: center;
+    }
+    .reviewSwiper .info .story{
+        margin-left: 0;
+    }
+    .reviewSwiper .info h2{
+        font-size: 17px;
+    }
+    .reviewSwiper .info h3{
+        font-size: 13px;
+    }
+    .reviewSwiper .story{
+        font-size: 11px;
+        line-height: 1.4;
+    }
+    .reviewSwiper .rating{
+        font-size: 11px;
+    }
+    .reviewSwiper .genre{
+        font-size: 11px;
+    }
+    .tag_wrap{
+        justify-content: center;
+        gap: 4px;
+    }
+    .tag_wrap span{
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    .reviewSwiper .detail{
+        width: 100%;
+        height: auto;
+        font-size: 11px;
+        padding: 8px;
+        margin-left: 0;
+    }
+    .reviewSwiper .detail p{
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+    .reviewSwiper .detail button{
+        width: 100%;
+        padding: 6px 0;
+        font-size: 11px;
+    }
+
+    /* 카드 슬라이더 공통 */
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .swiper-slide{
+        width: 85px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) img{
+        width: 85px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .txt{
+        width: 85px;
+        height: 44px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .txt span{
+        font-size: 9px;
+        margin-left: 6px;
+    }
+    :is(.comedySwiper,.nightSwiper,.dramaSwiper,.animeSwiper,.newSwiper) .txt p{
+        font-size: 9px;
+        margin-left: 6px;
+    }
+
+    /* OTT */
+    .ott_list{
+        gap: 8px;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ott_list .ott_box img{
+        width: 100%;
+        max-width: 120px;
+    }
+
+    /* 푸터 */
+    .footer_top{
+        padding: 16px 10px;
+        gap: 12px;
+    }
+    .footer_logo h2{
+        font-size: 16px;
+    }
+    .footer_logo p{
+        font-size: 11px;
+    }
+    .footer_icons{
+        gap: 6px;
+        justify-content: space-evenly;
+        margin-bottom: 12px;
+    }
+    .footer_icons span{ font-size: 9px; }
+    .footer_icons i{ font-size: 15px; }
+    .footer_menu{
+        width: calc(50% - 8px);
+        gap: 4px;
+    }
+    .footer_menu h3{
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+    .footer_menu a{
+        font-size: 11px;
+        margin-bottom: -6px;
+    }
+    .footer_middle{
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+    .company_info{
+        font-size: 10px;
+        line-height: 1.6;
+    }
+    .newsletter h4{
+        font-size: 13px;
+    }
+    .input_box input{
+        width: 140px;
+        height: 28px;
+        font-size: 11px;
+    }
+    .input_box button{
+        width: 50px;
+        font-size: 11px;
+    }
+    .sns{
+        gap: 10px;
+        font-size: 15px;
+    }
+    .footer_bottom{
+        padding: 0 14px;
+    }
+    .footer_bottom p{ font-size: 10px; }
+    .footer_link{ gap: 8px; }
+    .footer_link a{ font-size: 10px; }
+    .top_btn{
+        margin-right: 0;
+    }
+}

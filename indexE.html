@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘뭐먹지 업데이트 준비중</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/section/eat.css">
+    <link rel="icon" href="./images/main_img/main_ch2.png">
+</head>
+<body>
+    <div class="eat_wrap">
+        <div class="eat_top">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/eat_img/eat logo.png" alt="로고이미지">
+                </a>
+            </h1>
+            <div class="eat_search">
+                <input type="text" id="text" class="input_text" onkeydown="enterSearch(event)" autocomplete="off">
+                <button type="button" class="esch" vlue="검색"
+                onclick="search()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+        <div class="eat_center">
+            <img src="./images/eat_img/eat_icon.png" alt="아이콘이미지">
+            <h2 class="eat_tit">오늘 뭐 먹지?</h2>
+            <p>
+                <span>맛있는 하루를 위한 추천을</span>
+                <span>준비하고 있어요</span>
+                <i class="fa-regular fa-heart"></i>
+                <span>조금만 기다려주세요 :)</span>
+            </p>
+        </div>
+        <div class="eat_bottom">
+            <p>©2026 오늘 뭐하지? All rights reserved.</p>
+        </div>
+    </div>
+ 
+    <script>
+
+        function enterSearch(e){
+            if(e.key === "Enter"){
+                search();
+            }
+        }
+        //e.key : 키보드 이벤트에서 사용자가 어떤 키를 눌렀는지 알려주는 속성
+        function search(){
+            let esch = document.getElementById("text").value;
+            window.location.href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=" +esch;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐보지?</title>
+
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/section/watch.css">
+    <link rel="stylesheet" href="./css/section/watch_madia.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="icon" href="./images/main_img/main_ch2.png">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- 헤더 -->
+            <header id="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="header">
+                            <h1 class="logo">
+                                <a href="./index.html">
+                                    <img src="./images/sub_img/sub_logo.png" alt="서브페이지 로고이미지">
+                                </a>
+                            </h1>
+                            <div class="header_tit">오늘뭐보지?</div>
+                            <div class="header_search">
+                            <input type="text" id="text" class="input_text" placeholder="작품, 배우, OTT" onkeydown="enterSearch(event)" autocomplete="off">
+                            <button type="button" class="sch" value="검색"
+                            onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                            <div class="Light">
+                                <a href="#">
+                                    <img src="./images/sub_img/light.png" alt="전구이미지">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+            <!-- 메인배너 -->
+            <section id="mainBanner">
+                <div class="container">
+                    <!-- Swiper -->
+                    <div class="swiper bannerSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide s1">
+                                <img src="./images/sub_img/banner1.png" alt="배너1">
+                                <span>이 클 립 스</span>
+                            </div>
+                            <div class="swiper-slide s2">
+                                <img src="./images/sub_img/banner2.png" alt="배너2">
+                                <span>다시, 너에게</span>
+                            </div>
+                            <div class="swiper-slide s3">
+                                <img src="./images/sub_img/banner3.png" alt="배너3">
+                                <span>하늘섬의 비밀</span>
+                            </div>
+                            <div class="swiper-slide s4">
+                                <img src="./images/sub_img/banner4.png" alt="배너4">
+                                <span>별이 된 너에게</span>
+                            </div>
+                            <div class="swiper-slide s5">
+                                <img src="./images/sub_img/banner5.png" alt="배너5">
+                                <span>데 드 라 인</span>
+                            </div>
+                            <div class="swiper-slide s6">
+                                <img src="./images/sub_img/banner6.png" alt="배너6">
+                                <span>이계의 기억</span>
+                            </div>
+                            <div class="swiper-slide s7">
+                                <img src="./images/sub_img/banner7.png" alt="배너7">
+                                <span>그 계절의 끝에서</span>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOP10 -->
+            <section id="top10">
+                <div class="container">
+                    <div class="title">
+                        🔥 지금 가장 인기 있는 TOP10
+                    </div>
+                    <div class="movie_list">
+                        <!-- Swiper -->
+                        <div class="swiper top10Swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide t1">
+                                    <img src="./images/sub_img/top1.png" alt="탑1">
+                                    <div class="txt">
+                                        <span>이클립스</span>
+                                        <p>SF, 미스터리, 생존</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t2">
+                                    <img src="./images/sub_img/top2.png" alt="탑2">
+                                    <div class="txt">
+                                        <span>세컨드 오비트</span>
+                                        <p>SF, 미래드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t3">
+                                    <img src="./images/sub_img/top3.png" alt="탑3">
+                                    <div class="txt">
+                                        <span>더 라스트 시그널</span>
+                                        <p>SF 액션</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t4">
+                                    <img src="./images/sub_img/top4.png" alt="탑4">
+                                    <div class="txt">
+                                        <span>데드라인</span>
+                                        <p>액션</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t5">
+                                    <img src="./images/sub_img/top5.png" alt="탑5">
+                                    <div class="txt">
+                                        <span>블랙아웃</span>
+                                        <p>액션 스릴러</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t6">
+                                    <img src="./images/sub_img/top6.png" alt="탑6">
+                                    <div class="txt">
+                                        <span>브로큰 리콘</span>
+                                        <p>밀리터리 액션</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t7">
+                                    <img src="./images/sub_img/top7.png" alt="탑7">
+                                    <div class="txt">
+                                        <span>다시, 너에게</span>
+                                        <p>멜로, 로맨스</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t8">
+                                    <img src="./images/sub_img/top8.png" alt="탑8">
+                                    <div class="txt">
+                                        <span>그 계절의 끝에서</span>
+                                        <p>멜로, 로맨스</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t9">
+                                    <img src="./images/sub_img/top9.png" alt="탑9">
+                                    <div class="txt">
+                                        <span>하늘섬의 비밀</span>
+                                        <p>SF, 미스터리, 생존</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide t10">
+                                    <img src="./images/sub_img/top10.png" alt="탑10">
+                                    <div class="txt">
+                                        <span>판타지, 어드벤처</span>
+                                        <p>판타지, 이세계</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="top10-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 리뷰 -->
+            <section id="todayPick">
+                <div class="container">
+                    <div class="pick_wrap">
+                        <div class="review">
+                            <div class="swiper reviewSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review1.png" alt="리뷰1">
+                                        </div>
+                                        <div class="info">
+                                            <h2>이클립스</h2>
+                                            <div class="rating">
+                                                평점: ⭐⭐⭐⭐⭐ (4.9 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · SF / 미스터리 / 생존 · 132분
+                                            </p>
+                                            <h3>
+                                                “ 모든 것이 끝난 후, 진실은 우주에 남아있다. ”
+                                            </h3>
+                                            <p class="story">
+                                                지구 멸망 이후 인류는 마지막 희망을 찾아 우주로 향한다.
+                                                <br>
+                                                탐사대원 이안은 버려진 행성에서 정체불명의 신호를 발견한다.
+                                                <br>
+                                                신호를 추적하던 그는 인류 역사에서 지워진 거대한 비밀을 알게 된다.
+                                                <br>
+                                                동료들은 하나둘 의문의 사고를 겪기 시작하고,
+                                                이안은 인류의 미래를 결정할
+                                                 선택 앞에 놓인다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#우주</span>
+                                                <span>#생존</span>
+                                                <span>#SF</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>최민혁</p>
+                                            <p><strong>출연</strong><br>강태준, 서유리</p>
+                                            <p><strong>개봉일</strong><br>2025.11.28</p>
+                                            <p><strong>평점</strong><br>9.4 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review2.png" alt="리뷰2">
+                                        </div>
+                                        <div class="info">
+                                            <h2>세컨드 오비트</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐☆ (4.7 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · SF / 미래드라마 · 128분
+                                            </p>
+                                            <h3>
+                                                “ 인간과 기계, 그 경계는 어디까지인가. ”
+                                            </h3>
+                                            <p class="story">
+                                                감정을 가진 인공지능이 사회의 일부가 된 미래.
+                                                <br>
+                                                기자 유진은 AI 관련 의문의 사건을 취재하게 된다.
+                                                <br>
+                                                사건의 중심에는 인간보다 더 인간다운 AI가 존재하고 있었다.
+                                                <br>
+                                                감춰진 실험의 진실이 밝혀질수록 세상은 혼란에 빠진다.
+                                                <br>
+                                                유진은 인류와 AI의 공존을 위한 선택을 해야 한다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#AI</span>
+                                                <span>#미래사회</span>
+                                                <span>#SF</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>정하린</p>
+                                            <p><strong>출연</strong><br>윤지호, 김서아</p>
+                                            <p><strong>개봉일</strong><br>2025.10.21</p>
+                                            <p><strong>평점</strong><br>9.1 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review3.png" alt="리뷰3">
+                                        </div>
+                                        <div class="info">
+                                            <h2>더 라스트 시그널</h2>
+
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐☆ (4.8 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · SF / 액션 · 135분
+                                            </p>
+
+                                            <h3>
+                                                “ 마지막 신호는 아직 끝나지 않았다 ”
+                                            </h3>
+                                            <p class="story">
+                                                거대한 전쟁 이후 폐허가 된 미래 도시.
+                                                <br>
+                                                생존자들은 정체불명의 구조 신호를 수신하게 된다.
+                                                <br>
+                                                신호의 근원을 찾기 위해 위험한 여정을 시작하지만,
+                                                <br>
+                                                그곳에는 인류를 위협하는 거대한 존재가 기다리고 있었다.
+                                                <br>
+                                                마지막 희망을 지키기 위한 전투가 시작된다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#생존</span>
+                                                <span>#SF</span>
+                                                <span>#액션</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>한준서</p>
+                                            <p><strong>출연</strong><br>차도혁, 문예린</p>
+                                            <p><strong>개봉일</strong><br>2025.10.05</p>
+                                            <p><strong>평점</strong><br>9.2 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review4.png" alt="리뷰4">
+                                        </div>
+                                        <div class="info">
+                                            <h2>다시, 너에게</h2>
+                                            <div class="rating">
+                                                평점: ⭐⭐⭐⭐☆ (4.6 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 멜로 / 로맨스 · 124분
+                                            </p>
+                                            <h3>
+                                                “ 사랑은 끝나지 않았다. 단지, 계절이었을 뿐. ”
+                                            </h3>
+                                            <p class="story">
+                                                헤어진 지 7년이 지난 두 사람이 우연히 다시 만난다.
+                                                <br>
+                                                서로를 잊었다고 생각했지만 감정은 그대로 남아 있었다.
+                                                <br>
+                                                과거의 상처와 오해가 다시 떠오르기 시작하고,
+                                                <br>
+                                                두 사람은 다시 한번 사랑을 선택할지 고민하게 된다.
+                                                <br>
+                                                노을이 물든 도시에서 새로운 이야기가 시작된다.
+                                            </p>
+
+                                            <div class="tag_wrap">
+                                                <span>#재회</span>
+                                                <span>#로맨스</span>
+                                                <span>#첫사랑</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>김민규</p>
+                                            <p><strong>출연</strong><br>이재승, 나영주</p>
+                                            <p><strong>개봉일</strong><br>2025.12.10</p>
+                                            <p><strong>평점</strong><br>8.9 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review5.png" alt="리뷰5">
+                                        </div>
+                                        <div class="info">
+                                            <h2>블랙아웃</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐⭐ (4.8 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 액션 / 스릴러 · 129분
+                                            </p>
+                                            <h3>
+                                                “ 모든 것은 그날 밤 사라졌다. ”
+                                            </h3>
+                                            <p class="story">
+                                                대규모 정전 사태로 도시 전체가 마비된다.
+                                                <br>
+                                                혼란 속에서 전직 특수요원 준혁은 가족을 잃게 된다.
+                                                <br>
+                                                사건 뒤에 숨겨진 음모를 추적하던 그는,
+                                                <br>
+                                                국가를 뒤흔들 거대한 조직의 존재를 알게 된다.
+                                                <br>
+                                                복수와 생존을 위한 치열한 추격전이 펼쳐진다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#액션</span>
+                                                <span>#스릴러</span>
+                                                <span>#생존</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>이정혁</p>
+                                            <p><strong>출연</strong><br>김현우, 유민지</p>
+                                            <p><strong>개봉일</strong><br>2025.09.30</p>
+                                            <p><strong>평점</strong><br>9.3 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review6.png" alt="리뷰6">
+                                        </div>
+                                        <div class="info">
+                                            <h2>그 계절의 끝에서</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐☆ (4.4 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 로맨스/드라마 · 124분
+                                            </p>
+                                            <h3>
+                                                “ 사랑은 끝나지 않았다. 단지, 계절이었을 뿐. ”
+                                            </h3>
+                                            <p class="story">
+                                                비가 내리던 어느 계절, 우연처럼 다시 마주한 두 사람.
+                                                한때 누구보다 사랑했지만 서로 다른 선택으로 멀어졌던 그들은
+                                                추억과 현실 사이에서 다시 한번 서로의 마음을 마주하게 된다.
+                                                <br>
+
+                                                흘러가는 시간 속에서도 지워지지 않는 감정,
+                                                그리고 끝이라 믿었던 사랑의 마지막 페이지를 담아낸
+                                                감성 로맨스 영화.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#로맨스</span>
+                                                <span>#재회</span>
+                                                <span>#첫사랑</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>김도윤</p>
+                                            <p><strong>출연</strong><br>박은영, 한세윤</p>
+                                            <p><strong>개봉일</strong><br>2025.12.00</p>
+                                            <p><strong>평점</strong><br>8.9 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review7.png" alt="리뷰7">
+                                        </div>
+                                        <div class="info">
+                                            <h2>브로큰 리콘</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐☆ (4.7 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 로맨스/드라마 · 127분
+                                            </p>
+                                            <h3>
+                                                “ 구조는 없다. 살아남아 돌아와야 한다. ”
+                                            </h3>
+                                            <p class="story">
+                                                적진 깊숙한 곳에 고립된 정찰부대.
+                                                <br>
+                                                통신도 지원도 모두 끊긴 상황에서 임무는 계속된다.
+                                                <br>
+                                                부대원들은 살아남기 위해 서로를 의지하며 전진한다.
+                                                <br>
+                                                그러나 예상치 못한 배신이 그들을 기다리고 있었다.
+                                                <br>
+                                                끝없는 전장 속 마지막 작전이 시작된다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#밀리터리</span>
+                                                <span>#전쟁</span>
+                                                <span>#액션</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>오세진</p>
+                                            <p><strong>출연</strong><br>박도훈, 강민석</p>
+                                            <p><strong>개봉일</strong><br>2025.08.22</p>
+                                            <p><strong>평점</strong><br>9.0 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review8.png" alt="리뷰8">
+                                        </div>
+                                        <div class="info">
+                                            <h2>데드라인</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐⭐ (4.9 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 액션 / 범죄 · 131분
+                                            </p>
+                                            <h3>
+                                                “ 24시간 안에 모든 것을 끝내야 한다. ”
+                                            </h3>
+                                            <p class="story">
+                                                전직 요원 태훈은 가족을 납치당한다.
+                                                <br>
+                                                범인은 단 하루 안에 임무를 수행하라고 요구한다.
+                                                <br>
+                                                시간이 흐를수록 상황은 더욱 위험해지고,
+                                                <br>
+                                                태훈은 거대한 범죄 조직과 맞서게 된다.
+                                                <br>
+                                                마지막 1분까지 긴장을 놓을 수 없는 추격전이 펼쳐진다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#복수</span>
+                                                <span>#액션</span>
+                                                <span>#범죄</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>장태훈</p>
+                                            <p><strong>출연</strong><br>이준혁, 정수아</p>
+                                            <p><strong>개봉일</strong><br>2025.11.05</p>
+                                            <p><strong>평점</strong><br>9.5 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review9.png" alt="리뷰9">
+                                        </div>
+                                        <div class="info">
+                                            <h2>이계의 기억</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐⭐ (4.8 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 판타지 / 이세계 · 134분
+                                            </p>
+
+                                            <h3>
+                                                “ 잊고 있던 기억이 깨어난다. ”
+                                            </h3>
+                                            <p class="story">
+                                                평범한 소녀 아린은 어느 날 낯선 세계로 소환된다.
+                                                <br>
+                                                그곳에서 그녀는 오래전 사라진 왕국의 후계자라는 사실을 알게 된다.
+                                                <br>
+                                                봉인된 기억이 깨어날수록 세계의 진실도 드러난다.
+                                                <br>
+                                                아린은 동료들과 함께 멸망을 막기 위한 여정을 시작한다.
+                                                <br>
+                                                운명을 거스르는 마지막 전투가 다가온다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#이세계</span>
+                                                <span>#판타지</span>
+                                                <span>#성장</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>나유진</p>
+                                            <p><strong>성우</strong><br>김하린, 최시우</p>
+                                            <p><strong>개봉일</strong><br>2025.10.12</p>
+                                            <p><strong>평점</strong><br>9.3 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <img src="./images/sub_img/review10.png" alt="리뷰10">
+                                        </div>
+                                        <div class="info">
+                                            <h2>하늘섬의 비밀</h2>
+                                            <div class="rating">
+                                                ⭐⭐⭐⭐⭐ (4.9 / 5)
+                                            </div>
+                                            <p class="genre">
+                                                2025 · 판타지 / 어드벤처 · 136분
+                                            </p>
+                                            <h3>
+                                                “ 한 번도 닿을 수 없었던 하늘 위의 세계. ”
+                                            </h3>
+                                            <p class="story">
+                                                어린 소년 루카는 실종된 아버지가 남긴 지도 한 장을 발견한다.
+                                                <br>
+                                                지도는 세상 어디에도 존재하지 않는 전설의 하늘섬을 가리키고 있었다.
+                                                <br>
+                                                아버지의 흔적을 찾기 위해 여행을 떠난 루카는 신비한 생명체들과 새로운 동료들을 만나게 된다.
+                                                <br>
+                                                하지만 하늘섬을 노리는 거대한 세력이 움직이기 시작하고,
+
+                                                루카는 세상의 운명을 바꿀 비밀과 마주하게 된다.
+                                            </p>
+                                            <div class="tag_wrap">
+                                                <span>#판타지</span>
+                                                <span>#모험</span>
+                                                <span>#하늘섬</span>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p><strong>감독</strong><br>김하준</p>
+                                            <p><strong>성우</strong><br>이도윤, 박소희</p>
+                                            <p><strong>개봉일</strong><br>2025.09.18</p>
+                                            <p><strong>평점</strong><br>9.5 / 10</p>
+                                            <button>예고편 보기</button>
+                                            <button>보고싶어요</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 웃고 싶다면 -->
+            <section id="comedy">
+                <div class="container">
+                    <h2 class="title">😀 오늘 웃고 싶다면?</h2>
+                    <div class="movie_list">
+                        <!-- Swiper -->
+                        <div class="swiper comedySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide d1">
+                                    <img src="./images/sub_img/day1.png" alt="웃자1">
+                                    <div class="txt">
+                                        <span>괜찮아, 웃어도 돼</span>
+                                        <p>코미디</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d2">
+                                    <img src="./images/sub_img/day2.png" alt="웃자2">
+                                    <div class="txt">
+                                        <span>아무튼, 오늘은 셰프!</span>
+                                        <p>코미디</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d3">
+                                    <img src="./images/sub_img/day3.png" alt="웃자3">
+                                    <div class="txt">
+                                        <span>내 옆의 바보</span>
+                                        <p>로맨틱 코미디</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d4">
+                                    <img src="./images/sub_img/day4.png" alt="웃자4">
+                                    <div class="txt">
+                                        <span>무계획 여행</span>
+                                        <p>여행 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d5">
+                                    <img src="./images/sub_img/day5.png" alt="웃자5">
+                                    <div class="txt">
+                                        <span>연애 연습 중♡</span>
+                                        <p>청춘, 로맨틱 코미디</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d6">
+                                    <img src="./images/sub_img/day6.png" alt="웃자6">
+                                    <div class="txt">
+                                        <span>수상한 가족 회의</span>
+                                        <p>코미디, 미스터리</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d7">
+                                    <img src="./images/sub_img/day7.png" alt="웃자7">
+                                    <div class="txt">
+                                        <span>오늘부터 1일 차!</span>
+                                        <p>코미디, 직장</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d8">
+                                    <img src="./images/sub_img/day8.png" alt="웃자8">
+                                    <div class="txt">
+                                        <span>멍멍이의 하루</span>
+                                        <p>모험, 힐링</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d9">
+                                    <img src="./images/sub_img/day9.png" alt="웃자9">
+                                    <div class="txt">
+                                        <span>마녀의 배달 사고</span>
+                                        <p>모험, 코미디</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d10">
+                                    <img src="./images/sub_img/day10.png" alt="웃자10">
+                                    <div class="txt">
+                                        <span>콩닥콩닥 친구들</span>
+                                        <p>가족, 일상</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comedy-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 밤에 혼자 보기 -->
+            <section id="nightMovie">
+                <div class="container">
+                    <h2 class="title">🌃 밤에 혼자 보기 좋은 영화</h2>
+                    <div class="movie_list">
+                        <!-- Swiper -->
+                        <div class="swiper nightSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide n1">
+                                    <img src="./images/sub_img/night1.png" alt="밤1">
+                                    <div class="txt">
+                                        <span>너의 밤, 나의 위로</span>
+                                        <p>감성 멜로, 힐링</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n2">
+                                    <img src="./images/sub_img/night2.png" alt="밤2">
+                                    <div class="txt">
+                                        <span>그날의 침묵</span>
+                                        <p>심리 스릴러, 미스터리</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n3">
+                                    <img src="./images/sub_img/night3.png" alt="밤3">
+                                    <div class="txt">
+                                        <span>별을 넘어서</span>
+                                        <p>SF</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n4">
+                                    <img src="./images/sub_img/night4.png" alt="밤4">
+                                    <div class="txt">
+                                        <span>마법이 시작된 밤</span>
+                                        <p>판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n5">
+                                    <img src="./images/sub_img/night5.png" alt="밤5">
+                                    <div class="txt">
+                                        <span>그림자 추적자</span>
+                                        <p>범죄 스릴러</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n6">
+                                    <img src="./images/sub_img/night6.png" alt="밤6">
+                                    <div class="txt">
+                                        <span>오늘의 웃음 충전소</span>
+                                        <p>가족 코미디</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n7">
+                                    <img src="./images/sub_img/night7.png" alt="밤7">
+                                    <div class="txt">
+                                        <span>심야괴담</span>
+                                        <p>공포</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n8">
+                                    <img src="./images/sub_img/night8.png" alt="밤8">
+                                    <div class="txt">
+                                        <span>오늘도 수고했어</span>
+                                        <p>힐링</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n9">
+                                    <img src="./images/sub_img/night9.png" alt="밤9">
+                                    <div class="txt">
+                                        <span>밤의 추격전</span>
+                                        <p>액션</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n10">
+                                    <img src="./images/sub_img/night10.png" alt="밤10">
+                                    <div class="txt">
+                                        <span>다시, 노래할 수 있다면</span>
+                                        <p>음악 드라마</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="night-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 시간 삭제 드라마 -->
+            <section id="drama">
+                <div class="container">
+                    <h2 class="title">⏳ 시간 삭제되는 드라마</h2>
+                    <div class="movie_list">
+                        <!-- Swiper -->
+                        <div class="swiper dramaSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide c1">
+                                    <img src="./images/sub_img/time1.png" alt="시간1">
+                                    <div class="txt">
+                                        <span>작은 우산 아래</span>
+                                        <p>가족 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c2">
+                                    <img src="./images/sub_img/time2.png" alt="시간2">
+                                    <div class="txt">
+                                        <span>늦은 밤의 공부</span>
+                                        <p>가족 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c3">
+                                    <img src="./images/sub_img/time3.png" alt="시간3">
+                                    <div class="txt">
+                                        <span>황혼이 지나면</span>
+                                        <p>드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c4">
+                                    <img src="./images/sub_img/time4.png" alt="시간4">
+                                    <div class="txt">
+                                        <span>겨울의 약속</span>
+                                        <p>감성 멜로</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c5">
+                                    <img src="./images/sub_img/time5.png" alt="시간5">
+                                    <div class="txt">
+                                        <span>꿈을 향한 불빛</span>
+                                        <p>성장 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c6">
+                                    <img src="./images/sub_img/time6.png" alt="시간6">
+                                    <div class="txt">
+                                        <span>시간을 품은 손</span>
+                                        <p>가족 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c7">
+                                    <img src="./images/sub_img/time7.png" alt="시간7">
+                                    <div class="txt">
+                                        <span>별빛 아래서</span>
+                                        <p>청춘 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c8">
+                                    <img src="./images/sub_img/time8.png" alt="시간8">
+                                    <div class="txt">
+                                        <span>기다림의 의미</span>
+                                        <p>감성 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c9">
+                                    <img src="./images/sub_img/time9.png" alt="시간9">
+                                    <div class="txt">
+                                        <span>별빛 아래 약속</span>
+                                        <p>로맨스</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide c10">
+                                    <img src="./images/sub_img/time10.png" alt="시간10">
+                                    <div class="txt">
+                                        <span>엄마의 응원</span>
+                                        <p>가족 드라마</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="drama-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 애니 -->
+            <section id="anime">
+                <div class="container">
+                    <h2 class="title">✨ 입덕하기 좋은 애니</h2>
+                    <div class="movie_list">
+                        <!-- Swiper -->
+                        <div class="swiper animeSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide a1">
+                                    <img src="./images/sub_img/ani1.png" alt="애니1">
+                                    <div class="txt">
+                                        <span>진격의 거인</span>
+                                        <p>다크 판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a2">
+                                    <img src="./images/sub_img/ani2.png" alt="애니2">
+                                    <div class="txt">
+                                        <span>너의 이름은</span>
+                                        <p>로맨스, 판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a3">
+                                    <img src="./images/sub_img/ani3.png" alt="애니3">
+                                    <div class="txt">
+                                        <span>하이큐</span>
+                                        <p>스포츠</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a4">
+                                    <img src="./images/sub_img/ani4.png" alt="애니4">
+                                    <div class="txt">
+                                        <span>귀멸의 칼날</span>
+                                        <p>액션 판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a5">
+                                    <img src="./images/sub_img/ani5.png" alt="애니5">
+                                    <div class="txt">
+                                        <span>원피스</span>
+                                        <p>모험</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a6">
+                                    <img src="./images/sub_img/ani6.png" alt="애니6">
+                                    <div class="txt">
+                                        <span>도쿄 리벤저스</span>
+                                        <p>액션</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a7">
+                                    <img src="./images/sub_img/ani7.png" alt="애니7">
+                                    <div class="txt">
+                                        <span>장송의 프리렌</span>
+                                        <p>판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a8">
+                                    <img src="./images/sub_img/ani8.png" alt="애니8">
+                                    <div class="txt">
+                                        <span>센과 치히로의 행방불명</span>
+                                        <p>판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a9">
+                                    <img src="./images/sub_img/ani9.png" alt="애니9">
+                                    <div class="txt">
+                                        <span>마녀 배달부 키키</span>
+                                        <p>판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide a10">
+                                    <img src="./images/sub_img/ani10.png" alt="애니10">
+                                    <div class="txt">
+                                        <span>캐이온 !</span>
+                                        <p>일상 애니</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anime-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OTT -->
+            <section id="ott">
+                <div class="container">
+                    <h2 class="title">🍿 OTT 추천</h2>
+                    <div class="ott_list">
+                        <div class="ott_box o1">
+                            <a href="https://www.netflix.com/kr" target="_blank">
+                                <img src="./images/sub_img/ott1.png" alt="ott1">
+                            </a>
+                        </div>
+                        <div class="ott_box o2">
+                            <a href="https://www.disneyplus.com/" target="_blank">
+                                <img src="./images/sub_img/ott2.png" alt="ott2">
+                            </a>
+                        </div>
+                        <div class="ott_box o3">
+                            <a href="https://www.coupangplay.com/" target="_blank">
+                                <img src="./images/sub_img/ott3.png" alt="ott3">
+                            </a>
+                        </div>
+                        <div class="ott_box o4">
+                            <a href="https://www.tving.com/" target="_blank">
+                                <img src="./images/sub_img/ott4.png" alt="ott4">
+                            </a>
+                        </div>
+                        <div class="ott_box o5">
+                            <a href="https://watcha.com/browse/all" target="_blank">
+                                <img src="./images/sub_img/ott5.png" alt="ott5">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 신규작품 -->
+            <section id="newMovie">
+                <div class="container">
+                    <h2 class="title">새로 올라온 작품</h2>
+                    <div class="movie_list">
+                        <!-- Swiper -->
+                        <div class="swiper newSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide n1">
+                                    <img src="./images/sub_img/new1.png" alt="new1">
+                                    <div class="txt">
+                                        <span>진술의 밤</span>
+                                        <p>범죄 스릴러</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n2">
+                                    <img src="./images/sub_img/new2.png" alt="new2">
+                                    <div class="txt">
+                                        <span>다시, 너에게</span>
+                                        <p>멜로, 로맨스</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n3">
+                                    <img src="./images/sub_img/new3.png" alt="new3">
+                                    <div class="txt">
+                                        <span>철혈군주</span>
+                                        <p>사극 액션, 전쟁</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n4">
+                                    <img src="./images/sub_img/new4.png" alt="new4">
+                                    <div class="txt">
+                                        <span>우리 집에는 꼬리가 셋</span>
+                                        <p>가족 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n5">
+                                    <img src="./images/sub_img/new5.png" alt="new5">
+                                    <div class="txt">
+                                        <span>별이 된 너에게</span>
+                                        <p>판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n6">
+                                    <img src="./images/sub_img/new6.png" alt="new6">
+                                    <div class="txt">
+                                        <span>13번 복도</span>
+                                        <p>액션, 미스터리</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n7">
+                                    <img src="./images/sub_img/new7.png" alt="new7">
+                                    <div class="txt">
+                                        <span>석양의 리비에라</span>
+                                        <p>판타지</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n8">
+                                    <img src="./images/sub_img/new8.png" alt="new8">
+                                    <div class="txt">
+                                        <span>오메가 시티</span>
+                                        <p>SF</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n9">
+                                    <img src="./images/sub_img/new9.png" alt="new9">
+                                    <div class="txt">
+                                        <span>다시, 노래할 수 있다면</span>
+                                        <p>음악 드라마</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide n10">
+                                    <img src="./images/sub_img/new10.png" alt="new10">
+                                    <div class="txt">
+                                        <span>여우 여인 꿈 이야기</span>
+                                        <p>사극 로맨스</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 푸터 -->
+            <footer id="footer">
+                <div class="container">
+                    <footer class="footer">
+                        <div class="footer_top">
+                            <div class="footer_logo">
+                                <h2>오늘뭐하지?</h2>
+                                <p>당신의 취향을 더 잘 이해하는 오늘 뭐하지!</p>
+
+                                <ul class="footer_icons">
+                                    <li><i class="fa-regular fa-bookmark"></i><span>맞춤추천</span></li>
+                                    <li><i class="fa-regular fa-heart"></i><span>인기순위</span></li>
+                                    <li><i class="fa-regular fa-clock"></i><span>나의기록</span></li>
+                                    <li><i class="fa-regular fa-bell"></i><span>알림설정</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer_menu">
+                                <h3>서비스</h3>
+                                <a href="./index2.html">오늘뭐보지?</a>
+                                <a href="./indexE.html">오늘뭐먹지?</a>
+                                <a href="./indexw.html">오늘뭐입지?</a>
+                                <a href="./indexP.html">오늘어디가지?</a>
+                                <a href="#">TOP10</a>
+                            </div>
+
+                            <div class="footer_menu">
+                                <h3>카테고리</h3>
+                                <a href="#nightMovie">영화</a>
+                                <a href="#drama">드라마</a>
+                                <a href="#anime">애니메이션</a>
+                            </div>
+
+                            <div class="footer_menu">
+                                <h3>OTT 추천</h3>
+                                <a href="https://www.netflix.com/kr" target="_blank">넷플릭스</a>
+                                <a href="https://www.disneyplus.com/" target="_blank">디즈니+</a>
+                                <a href="https://www.coupangplay.com/" target="_blank">쿠팡 플레이</a>
+                                <a href="https://www.tving.com/" target="_blank">티빙</a>
+                                <a href="https://watcha.com/browse/all" target="_blank">왓챠</a>
+                            </div>
+
+                            <div class="footer_menu">
+                                <h3>고객센터</h3>
+                                <a href="#">공지사항</a>
+                                <a href="#">자주 묻는 질문</a>
+                                <a href="#">문의하기</a>
+                                <a href="#">이용약관</a>
+                                <a href="#">개인정보처리방침</a>
+                            </div>
+                        </div>
+
+                        <div class="footer_middle">
+                            <div class="company_info">
+                                <p>(주) 오늘뭐하지? | 대표이사 : 김콘텐츠</p>
+                                <p>사업자등록번호 : 123-45-67890 &nbsp; &nbsp;통신판매업신고 : 2026-서울한국-0601</p>
+                                <p>주소 : 서울특별시 양천구 55길 13 101호</p>
+                                <p>이메일 : alsrb012900@naver.com &nbsp; &nbsp; 고객센터 : 010-2335-1485</p>
+                            </div>
+
+                            <div class="newsletter">
+                                <h4>새로운 콘텐츠 소식 받기</h4>
+
+                                <div class="input_box">
+                                    <input type="email" placeholder="이메일 입력">
+                                    <button>구독</button>
+                                </div>
+
+                                <div class="sns">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-youtube"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-blogger"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <div class="subfooter">
+                    <div class="footer_bottom">
+                        <p>©2026 오늘 뭐하지? All rights reserved.</p>
+
+                        <div class="footer_link">
+                            <a href="#">사이트맵</a>
+                            <a href="#">제휴문의</a>
+                            <a href="#">광고문의</a>
+                        </div>
+
+                        <button class="top_btn" id="topBtn">
+                            <img src="./images/sub_img/foot_btn.png" alt="버튼">
+                            <span>TOP</span>
+                        </button>
+                    </div>
+                </div>
+                
+            </footer>
+            
+
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script src="./js/watch.js"></script>
+
+
+
+
+</body>
+
+</html>

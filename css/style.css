@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+
+/* setting */
+@import url(./setting/font.css);
+@import url(./setting/resct.css);
+@import url(./setting/vars.css);
+

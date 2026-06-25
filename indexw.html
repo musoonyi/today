@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐 입지?</title>
+
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/section/wear.css">
+    <link rel="stylesheet" href="./css/section/wear_media.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="icon" href="./images/main_img/main_ch2.png">
+</head>
+
+<body>
+    <main id="main">
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="header">
+                        <h1 class="logo">
+                            <a href="./index.html">
+                                <img src="./images/wear_img/logo4.png" alt="logo">
+                            </a>
+                        </h1>
+                        <div class="header_tit">오늘뭐입지?</div>
+                        <div class="header_search">
+                            <input type="text" id="text" class="input_text" onkeydown="enterSearch(event)"
+                                autocomplete="off">
+                            <button type="button" class="sch" vlue="검색" onclick="search()"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <div class="Light">
+                            <a href="#">
+                                <img src="./images/wear_img/light.png" alt="전구이미지">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="content_1">
+            <div class="container">
+                <section class="content_1">
+                    <div class="uni" id="unibar">
+                        <div class="uni-item">
+                            <img src="./images/wear_img/icon_male copy_r.png" alt="남자아이콘">
+                        </div>
+                        <div class="uni-item">
+                            <img src="./images/wear_img/icon_female copy_r.png" alt="남자아이콘">
+                        </div>
+                    </div>
+                    <article class="box left">
+                        <img src="./images/wear_img/deco_1.png" alt="데코이미지1" class="deco deco_hanger">
+                        <img src="./images/wear_img/deco_2.png" alt="데코이미지1" class="deco deco_heart">
+                        <img src="./images/wear_img/deco_3.png" alt="데코이미지1" class="deco deco_star_1">
+                        <img src="./images/wear_img/deco_4.png" alt="데코이미지1" class="deco deco_star_2">
+                        <h1 class="logo">
+                            오늘 뭐 입지 ?
+                        </h1>
+                        <span class="sub_tit">
+                            다양한 코디를 구경하고,</br>나만의 스타일을 찾아보세요 !
+                        </span>
+                        <div class="search_wrap">
+                            <input type="text" class="search_input" placeholder="어떤 코디를 찾고 있나요 ?">
+                            <button class="search_btn">
+                                <i class="ti ti-search"></i>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="box right">
+                        <img src="./images/wear_img/closet.png" alt="옷장사진" class="closet">
+                        <img src="./images/wear_img/postit_png.png" alt="포스트잇사진" class="postit">
+
+                    </article>
+                </section>
+            </div>
+        </section>
+        <section id="category">
+            <div class="container">
+                <section class="category">
+                    <div class="cate" id="cateBar">
+                        <div class="cate-item active" data-label="전체">
+                            <i class="ti ti-layout-grid"></i>
+                            <span>전체</span>
+                        </div>
+                        <div class="cate-item" data-label="아우터">
+                            <i class="fa-solid fa-vest"></i>
+                            <span>아우터</span>
+                        </div>
+                        <div class="cate-item" data-label="상의">
+                            <i class="ti ti-shirt-sport"></i>
+                            <span>상의</span>
+                        </div>
+                        <div class="cate-item" data-label="하의">
+                            <svg viewBox="0 0 100 120" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="12" y="8" width="76" height="12" rx="3" />
+                                <circle cx="50" cy="14" r="3" />
+                                <path
+                                    d="M12 20 Q10 20 10 23 L14 75 Q14 78 17 78 L38 78 Q41 78 42 75 L50 52 L58 75 Q59 78 62 78 L83 78 Q86 78 86 75 L90 23 Q90 20 88 20 Z" />
+                                <path d="M16 24 Q16 35 26 36 L38 35 L38 24" />
+                                <path d="M84 24 Q84 35 74 36 L62 35 L62 24" />
+                                <line x1="50" y1="20" x2="50" y2="50" />
+                                <line x1="14" y1="72" x2="42" y2="72" />
+                                <line x1="58" y1="72" x2="86" y2="72" />
+                            </svg>
+                            <span>하의</span>
+                        </div>
+                        <div class="cate-item" data-label="신발">
+                            <i class="ti ti-shoe"></i>
+                            <span>신발</span>
+                        </div>
+                        <div class="cate-item" data-label="가방">
+                            <i class="ti ti-shopping-bag"></i>
+                            <span>가방</span>
+                        </div>
+                        <div class="cate-item" data-label="모자">
+                            <i class="fa-solid fa-hat-cowboy"></i>
+                            <span>모자</span>
+                        </div>
+                        <div class="cate-item" data-label="시계">
+                            <i class="ti ti-clock"></i>
+                            <span>시계</span>
+                        </div>
+                        <div class="cate-item" data-label="액세서리">
+                            <i class="ti ti-sunglasses"></i>
+                            <span>액세서리</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section id="ad_1">
+            <div class="container">
+                <section class="ad_1">
+                    <div class="ad_1_inner">
+                        <div class="ad_1_txt">
+                            <p class="ad_sub">새로운 스타일의 시작</p>
+                            <h2 class="ad_main">계절 맞이 추천 코디 모음</h2>
+                            <p class="ad_desc">새로운 계절을 맞이하는 스타일을 만나보세요 !</p>
+                            <a href="#" class="ad_btn">보러가기</a>
+                        </div>
+                        <img src="./images/wear_img/banner_1.png" alt="배너">
+                    </div>
+                </section>
+            </div>
+        </section>
+        <h2 class="tit p1">
+            실시간 인기 코디
+        </h2>
+        <section id="fashion_1">
+            <section class="fashion_1 swiper">
+                <div class="swiper-wrapper">
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_1.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_1_jacket.png" alt="자켓이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">ADIDAS 플레더 패드 재킷</p>
+                                        <p class="item_price">259,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_1_shoes.png" alt="신발이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">ADIDAS VL 코트 베이스</p>
+                                        <p class="item_price">46,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/ljs_410.jpg" alt="이재승아이콘1">
+                                    <span class="f_id">@ljs_410</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">2.8k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_3.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_3_windbreaker 1 (1).png" alt="자켓이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">몽벨 윈드 블라스트 후드 자켓</p>
+                                        <p class="item_price">100,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_3_pants 1.png" alt="바지이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">코데라 우먼 코튼 앤 린넨 팬츠</p>
+                                        <p class="item_price">486,500원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필2">
+                                    <span class="f_id">@yzk_85</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">2.1k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_4.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_4_cap 1.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">이미스 뉴 로고 캡 네이비</p>
+                                        <p class="item_price">40,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_4_top 1.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">꼼데가르송 하트 티셔츠</p>
+                                        <p class="item_price">119,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필3">
+                                    <span class="f_id">@s_salsss</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">1.8k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_2.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_2_jacket.png" alt="자켓이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">Celine 코듀로이 테디 자켓블랙</p>
+                                        <p class="item_price">3,590,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_2_belt.jpeg" alt="벨트이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">클래식 레더 벨트</p>
+                                        <p class="item_price">69,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필4">
+                                    <span class="f_id">@mxexmx_</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">1.6k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_6.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_6_top.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">미스치프 와이드 넥 티셔츠 블랙</p>
+                                        <p class="item_price">112,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_6_arm.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">이미스 울 암 워머 블랙</p>
+                                        <p class="item_price">70,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필5">
+
+                                    <span class="f_id">@jin__ooooo</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">1.3k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_5.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_5_cap.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">ADIDAS 플레임 로고 핑크 볼캡</p>
+                                        <p class="item_price">70,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_5_shoes.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">나이키 x 스트레인지러브 SB 덩크 로우 핑크</p>
+                                        <p class="item_price">1,950,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필6">
+
+                                    <span class="f_id">@hyunusual</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">1.1k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_7.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_7_top.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">키르쉬 코튼 크롭 화이트 컬러</p>
+                                        <p class="item_price">29,800원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/card_7_pants.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">키르쉬 슬림 와이드 데님</p>
+                                        <p class="item_price">58,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필6">
+
+                                    <span class="f_id">@iam_girl</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">1.9k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="f_card swiper-slide">
+                        <div class="f_img">
+                            <img src="./images/wear_img/card_8.png" alt="패션이미지">
+                        </div>
+                        <div class="f_info">
+                            <div class="f_product">
+                                <div class="f_item">
+                                    <img src="./images/wear_img/rec_shirt_2.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">비유어러버 네이비 린넨 셔츠</p>
+                                        <p class="item_price">119,000원</p>
+                                    </div>
+                                </div>
+                                <div class="f_item">
+                                    <img src="./images/wear_img/rec_shoes_2.png" alt="상품이미지">
+                                    <div class="f_item_text">
+                                        <p class="item_name">비유어러버 클래식 토앤토</p>
+                                        <p class="item_price">59,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_user">
+                                <div class="f_profile">
+                                    <img src="./images/wear_img/profile.png" alt="프로필6">
+
+                                    <span class="f_id">@iam_boy</span>
+                                </div>
+                                <div class="f_like">
+                                    <span class="heart">🤍</span>
+                                    <span class="like_count">1.3k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+        <section id="advertise">
+            <div class="container">
+                <div class="advertise_inner">
+                    <div class="advertise_txt">
+                        <p>편안함과 스타일을 한번에</p>
+                        <p>데일리 아이템 특별 할인</p>
+                        <p>최대 30% 할인 + 무료배송 혜택 !</p>
+                        <button class="click">지금 쇼핑하기</button>
+                    </div>
+                    <div class="advertise_wrap">
+                        <article class="advertise_item p1">
+                            <img src="./images/wear_img/ad_mtm_png.png" alt="상의이미지">
+                            <p class="item_name">스탠다드 맨투맨</p>
+                            <p class="item_price">29,000원</p>
+                        </article>
+                        <article class="advertise_item p2">
+                            <img src="./images/wear_img/ad_denim_png.png" alt="바지이미지">
+                            <p class="item_name">데님 팬츠</p>
+                            <p class="item_price">39,000원</p>
+                        </article>
+                        <article class="advertise_item p3">
+                            <img src="./images/wear_img/ad_shoes_png.png" alt="신발이미지">
+                            <p class="item_name">아이보리 스니커즈</p>
+                            <p class="item_price">49,000원</p>
+                        </article>
+                        <article class="advertise_item p4">
+                            <img src="./images/wear_img/ad_bag_png.png" alt="가방이미지">
+                            <p class="item_name">데일리 백팩</p>
+                            <p class="item_price">89,000원</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2 class="tit p2">
+            셀럽 스타일링 보드
+        </h2>
+        <section id="fashion_2">
+            <div class="container">
+                <div class="m_wrap">
+                    <article class="m_card">
+                        <div class="swiper m_img">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_1.png" alt="모델이미지1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_1_2.png" alt="모델이미지1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_1_3.png" alt="모델이미지1">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="m_right">
+                            <div class="m_info">
+                                <div class="m_product">
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_hood_1_r.png" alt="자켓이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">우영미 백로고 후드<br> 다크 그레이</p>
+                                            <p class="item_price">430,000원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_pants_1_r.png" alt="바지이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">니티드 버뮤다 트레이닝<br> 하프 팬츠 멜란지 그레이</p>
+                                            <p class="item_price">39,800원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_shoes_1_rr.png" alt="신발이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">아디다스 버뮤다<br> 글로우 핑크</p>
+                                            <p class="item_price">40,000원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m_user">
+                            <div class="m_profile">
+                                <img src="./images/wear_img/profile.png" alt="프로필">
+                                <span class="m_id">@pretty__</span>
+                            </div>
+                            <div class="m_like">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">27.7k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="m_card">
+                        <span class="m_ad_badge">광고</span>
+                        <div class="m_img">
+                            <img src="./images/wear_img/model_2.png" alt="모델이미지2">
+                        </div>
+                        <div class="m_right">
+                            <div class="m_info">
+                                <div class="m_product">
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/./rec_shirt_2.png" alt="셔츠이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">비유어러버<br> 네이버 린넨 셔츠</p>
+                                            <p class="item_price">119,000원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_pants_2.png" alt="바지이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">비유어러버<br> 버뮤다 린넨 팬츠</p>
+                                            <p class="item_price">79,000원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_shoes_2.png" alt="신발이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">비유어러버<br> 클래식 토맨토</p>
+                                            <p class="item_price">59,000원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="m_user">
+                            <div class="m_profile">
+                                <img src="./images/wear_img/profile.png" alt="프로필">
+                                <span class="m_id">@official_beyourlover</span>
+                            </div>
+                            <div class="m_like">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">13k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="m_card">
+                        <div class="swiper m_img">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_3.png" alt="모델이미지1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_3_2.png" alt="모델이미지1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_3_3.png" alt="모델이미지1">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="m_right">
+                            <div class="m_info">
+                                <div class="m_product">
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_hz_3_1.png" alt="후드이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">셀린느 라나 콘 카푸치오<br> 가디건 그레이오 메디오</p>
+                                            <p class="item_price">2,290,000원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_pants_3.png" alt="바지이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">로에베 에너그램 배기<br> 데님 진 블루</p>
+                                            <p class="item_price">1,160,000원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_shoes_3.png" alt="신발이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">루이비통 x 제이홉 LV<br> 버터스프트 스니커즈 핑크</p>
+                                            <p class="item_price">3,100,000원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m_user">
+                            <div class="m_profile">
+                                <img src="./images/wear_img/profile.png" alt="프로필">
+                                <span class="m_id">@iamhandsome</span>
+                            </div>
+                            <div class="m_like">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">9.7k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="m_card">
+                        <div class="swiper m_img">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_4.png" alt="모델이미지1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_4_2.png" alt="모델이미지1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/wear_img/model_4_3.png" alt="모델이미지1">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="m_right">
+                            <div class="m_info">
+                                <div class="m_product">
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_top_4.png" alt="상의이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">에센셜 니트 폴오버<br> 스웨터 린넨</p>
+                                            <p class="item_price">292,000원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_pants_4.png" alt="바지이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">니티드 커브드 와이드<br> 데님 팬츠 크림</p>
+                                            <p class="item_price">59,800원</p>
+                                        </div>
+                                    </div>
+                                    <div class="m_item">
+                                        <img src="./images/wear_img/rec_shoes_4.png" alt="신발이미지">
+                                        <div class="m_item_text">
+                                            <p class="item_name">디올 B23 로우 오블리크<br> 캔버스 화이트 & 블랙</p>
+                                            <p class="item_price">1,500,000원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="m_user">
+                            <div class="m_profile">
+                                <img src="./images/wear_img/profile.png" alt="프로필">
+                                <span class="m_id">@mingyu_kim</span>
+                            </div>
+                            <div class="m_like">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">18k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <h2 class="tit p3">
+            커뮤니티 인기 게시글
+        </h2>
+        <section id="community">
+            <div class="container">
+                <section class="community">
+                    <article class="talk">
+                        <div class="talk_top">
+                            <div class="talk_icon">
+                                <img src="./images/wear_img/emotion_1.png" alt="사진">
+                            </div>
+                            <p class="talk_text">봄에 입기 좋은 자켓 좀 추천 부탁드려요 :(</p>
+                        </div>
+                        <div class="talk_bottom">
+                            <div class="talk_meta">
+                                <span class="talk_user">@crying_beansprouts</span>
+                                <span class="talk_time">3분 전</span>
+                            </div>
+                            <div class="talk_stats">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">18</span>
+                                <span class="talk_emoji">💬</span>
+                                <span class="talk_count">18</span>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="talk">
+                        <div class="talk_top">
+                            <div class="talk_icon">
+                                <i class="fa-regular fa-file-zipper"></i>
+                            </div>
+                            <p class="talk_text">와이드 팬츠 코디 모음.ZIP</p>
+                        </div>
+                        <div class="talk_bottom">
+                            <div class="talk_meta">
+                                <span class="talk_user">@wide_fit</span>
+                                <span class="talk_time">47분 전</span>
+                            </div>
+                            <div class="talk_stats">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">25</span>
+                                <span class="talk_emoji">💬</span>
+                                <span class="talk_count">45</span>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="talk">
+                        <div class="talk_top">
+                            <div class="talk_icon">
+                                <i class="fa-solid fa-file-image"></i>
+                            </div>
+                            <p class="talk_text">오늘 데이트인데 코디 평가 좀..</p>
+                        </div>
+                        <div class="talk_bottom">
+                            <div class="talk_meta">
+                                <span class="talk_user">@oneul_date</span>
+                                <span class="talk_time">2시간 전</span>
+                            </div>
+                            <div class="talk_stats">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">14</span>
+                                <span class="talk_emoji">💬</span>
+                                <span class="talk_count">28</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="talk">
+                        <div class="talk_top">
+                            <div class="talk_icon">
+                                <i class="fa-regular fa-face-kiss-wink-heart"></i>
+                            </div>
+                            <p class="talk_text">20만원 이하 실버쥬얼리 브랜드 좀 알려주세요~</p>
+                        </div>
+                        <div class="talk_bottom">
+                            <div class="talk_meta">
+                                <span class="talk_user">@bracelet_love</span>
+                                <span class="talk_time">4시간 전</span>
+                            </div>
+                            <div class="talk_stats">
+                                <span class="heart">🤍</span>
+                                <span class="like_count">17</span>
+                                <span class="talk_emoji">💬</span>
+                                <span class="talk_count">33</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </section>
+        <div class="comment_modal">
+            <div class="comment_modal_box">
+                <h3>댓글 작성 안내</h3>
+
+                <p>
+                    욕설, 성희롱, 무분별한 비난은 제재의 대상이 될 수 있습니다.<br>
+                    서로를 존중하는 댓글 문화를 만들어 주세요.
+                </p>
+
+                <button class="modal_close">확인했습니다</button>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="container">
+                <footer class="footer">
+                    <div class="footer_top">
+
+                        <div class="footer_logo">
+                            <h2>오늘뭐하지?</h2>
+                            <p>당신의 취향을 더 잘 이해하는 오늘 뭐하지!</p>
+
+                            <ul class="footer_icons">
+                                <li><i class="fa-regular fa-bookmark"></i><span>맞춤추천</span></li>
+                                <li><i class="fa-regular fa-heart"></i><span>인기순위</span></li>
+                                <li><i class="fa-regular fa-clock"></i><span>나의기록</span></li>
+                                <li><i class="fa-regular fa-bell"></i><span>알림설정</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer_menu">
+                            <h3>서비스</h3>
+                            <a href="./index2.html">오늘뭐보지?</a>
+                            <a href="./indexE.html">오늘뭐먹지?</a>
+                            <a href="./indexw.html">오늘뭐입지?</a>
+                            <a href="./indexP.html">오늘어디가지?</a>
+                            <a href="#">TOP10</a>
+                        </div>
+
+                        <div class="footer_menu">
+                            <h3>카테고리</h3>
+                            <a href="#fashion_1">실시간 인기</a>
+                            <a href="#community">커뮤니티</a>
+                            <a href="#fashion_2">스타일링 보드</a>
+                        </div>
+
+                        <div class="footer_menu">
+                            <h3>패션 플랫폼</h3>
+                            <a href="https://www.musinsa.com/campaign/mujinjangsale/special" target="_blank">무신사</a>
+                            <a href="https://kream.co.kr/" target="_blank">크림</a>
+                            <a href="https://www.hiver.co.kr/desktop/home?tab=recommend" target="_blank">하이버</a>
+                            <a href="https://m.a-bly.com/">에이블리</a>
+                            <a href="https://zigzag.kr/" target="_blank">지그재그</a>
+                        </div>
+
+                        <div class="footer_menu">
+                            <h3>고객센터</h3>
+                            <a href="#">공지사항</a>
+                            <a href="#">자주 묻는 질문</a>
+                            <a href="#">문의하기</a>
+                            <a href="#">이용약관</a>
+                            <a href="#">개인정보처리방침</a>
+                        </div>
+
+                    </div>
+
+                    <div class="footer_middle">
+                        <div class="company_info">
+                            <p>(주) 오늘뭐하지? | 대표이사 : 김콘텐츠</p>
+                            <p>사업자등록번호 : 123-45-67890 &nbsp; &nbsp;통신판매업신고 : 2026-서울한국-0601</p>
+                            <p>주소 : 서울특별시 양천구 55길 13 101호</p>
+                            <p>이메일 : alsrb012900@naver.com &nbsp; &nbsp; 고객센터 : 010-2335-1485</p>
+                        </div>
+
+                        <div class="newsletter">
+                            <h4>새로운 콘텐츠 소식 받기</h4>
+
+                            <div class="input_box">
+                                <input type="email" placeholder="이메일 입력">
+                                <button>구독</button>
+                            </div>
+
+                            <div class="sns">
+                                <i class="fa-brands fa-instagram"></i>
+                                <i class="fa-brands fa-youtube"></i>
+                                <i class="fa-brands fa-x-twitter"></i>
+                                <i class="fa-brands fa-blogger"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </footer>
+
+            </div>
+            <div class="subfooter">
+                <div class="footer_bottom">
+                    <p>©2026 오늘 뭐하지? All rights reserved.</p>
+
+                    <div class="footer_link">
+                        <a href="#">사이트맵</a>
+                        <a href="#">제휴문의</a>
+                        <a href="#">광고문의</a>
+                    </div>
+
+                    <button class="top_btn" id="topBtn">
+                        <img src="./images/wear_img/foot_btn.png" alt="버튼이미지">
+                        <span>TOP</span>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/wear.js"></script>
+
+</body>
+
+</html>

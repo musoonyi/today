@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'OngleipKonkon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'KccMurukMuruk';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+.notoK {
+    font-family: "Noto Sans KR", sans-serif;
+    /* Italic: 0 Weight: 100 – 900 */
+}
+.notoE {
+    font-family: "Noto Sans", sans-serif;
+    /* Italic: 0 Width: 100 Weight: 100 – 900 */
+}
+.ongle {
+    font-family: 'OngleipKonkon';
+}
+.muruk {
+    font-family: 'KccMurukMuruk';
+}

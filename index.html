@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘 뭐하지?</title>
+  <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/section/main.css">
+  <link rel="stylesheet" href="./css/section/main_media.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="icon" href="./images/main_img/main_ch2.png">
+</head>
+
+<body>
+
+  <!-- 배경 -->
+
+  <video id="backgroundVideo" autoplay muted loop playsinline>
+    <source src="./images/main_img/main_video.mp4" type="video/mp4">
+  </video>
+
+  <div id="app">
+
+    <!-- 사이드바 -->
+
+    <aside id="sidebar">
+      <div>
+        <a href="./index.html">
+          <img src="./images/main_img/main_light.png" alt="main_light">
+        </a>
+      </div>
+
+      <nav class="side_menu">
+        <ul>
+          <li class="menu_item active">
+
+            <a href="./index.html">
+              <i class="fa-solid fa-house"></i>
+              <p>홈</p>
+            </a>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <p>검색</p>
+            </a>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <i class="fa-regular fa-star"></i>
+              <p>추천</p>
+            </a>
+          </li>
+          <!-- <li class="menu_item">
+            <a href="#">
+              <i class="fa-regular fa-bookmark"></i>
+              <p>저장</p>
+            </a>
+          </li> -->
+          <li class="menu_item" id="myMenuBtn">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              <p>MY</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </aside>
+
+    <!-- 좌하단 고양이 -->
+    <div class="f_logo">
+      <a href="#">
+        <img src="./images/main_img/main_ch2.png" alt="f_logo">
+      </a>
+    </div>
+
+    <!-- 상단메뉴 -->
+    <div id="topMenu">
+      <button id="loginBtn">
+        <i class="fa-regular fa-user"></i>
+        <span>로그인</span>
+      </button>
+      <button id="logoutBtn" style="display:none;">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>로그아웃</span>
+      </button>
+    </div>
+  </div>
+  <div id="login">
+    <div class="modalBox">
+      <button id="close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2>로그인</h2>
+      <input type="text" placeholder="아이디">
+      <input type="password" placeholder="비밀번호">
+      <div class="accountLinks">
+        <a href="#">회원가입</a>
+        <a href="#">비밀번호 찾기</a>
+      </div>
+      <button class="loginSubmit">로그인</button>
+      <div class="socialLogin">
+        <button class="kakaoBtn">
+          카카오 로그인
+        </button>
+        <button class="googleBtn">
+          구글 로그인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY 페이지 슬라이드 패널 -->
+  <section id="myPage">
+    <div class="my_top">
+      <div>
+        <h1>MY PAGE
+          <i class="fa-solid fa-heart"></i>
+        </h1>
+        <p>나의 취향을 모아보고, 히스토리를 확인해보세요!</p>
+      </div>
+      <div class="my_top_right">
+        <button class="acc_btn">계정설정</button>
+      </div>
+    </div>
+
+    <div class="row1">
+      <div class="card profile_card">
+        <div class="profile_img">
+          <img src="./images/main_img/main_menuimg3.png" alt="프로필">
+          <span class="cam_btn">
+            <i class="fa-solid fa-camera"></i>
+          </span>
+        </div>
+        <div class="profile_text">
+          <h3>안녕하세요, 민규님!</h3>
+          <p>오늘도 좋은 하루 보내세요!</p>
+          <button class="edit_btn">프로필 편집</button>
+        </div>
+        <div class="profile_meta">
+          회원가입일 <b>2026.06.14</b>
+          이메일 <b>alsrb012900@naver.com</b>
+        </div>
+      </div>
+
+      <div class="card badge_card">
+        <div class="card_head">
+          <h3>나의 배지</h3>
+          <a href="#">전체보기 ></a>
+        </div>
+        <p class="sub">다양한 활동을 통해 배지를 모아보세요!</p>
+        <div class="badge_list">
+          <div class="badge_item">
+            <p>첫 검색</p>
+            <p>검색 1회 달성</p>
+          </div>
+          <div class="badge_item">
+            <p>저장 마스터</p>
+            <p>저장 10개 달성</p>
+          </div>
+          <div class="badge_item">
+            <p>탐색가</p>
+            <p>검색 50회 달성</p>
+          </div>
+          <div class="badge_item">
+            <p>인기 추천러</p>
+            <p>좋아요 50개 달성</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat_row">
+      <div class="stat_item">
+        <span class="stat_icon stat_save">
+          <i class="fa-regular fa-bookmark"></i>
+        </span>
+        <div>
+          <p>저장한 항목</p>
+          <p class="val">28<span>개</span></p>
+        </div>
+      </div>
+      <div class="stat_item">
+        <span class="stat_icon stat_search">
+          <i class="fa-regular fa-clock"></i>
+        </span>
+        <div>
+          <p>검색 기록</p>
+          <p class="val">152<span>개</span></p>
+        </div>
+      </div>
+      <div class="stat_item">
+        <span class="stat_icon stat_like">
+          <i class="fa-regular fa-heart"></i>
+        </span>
+        <div>
+          <p>좋아요</p>
+          <p class="val">71<span>개</span></p>
+        </div>
+      </div>
+      <div class="stat_item">
+        <span class="stat_icon stat_visit">
+          <i class="fa-regular fa-calendar"></i>
+        </span>
+        <div>
+          <p>이번 달 방문</p>
+          <p class="val">12<span>일</span></p>
+        </div>
+      </div>
+      <div class="stat_item">
+        <span class="stat_icon stat_friend">
+          <i class="fa-solid fa-user-group"></i>
+        </span>
+        <div>
+          <p>친구 수</p>
+          <p class="val">38<span>명</span></p>
+        </div>
+      </div>
+      <div class="stat_item">
+        <span class="stat_icon stat_dm">
+          <i class="fa-regular fa-comment-dots"></i>
+        </span>
+        <div>
+          <p>DM</p>
+          <p class="val">124<span>건</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row3">
+      <div class="card taste_card">
+        <div class="taste_left">
+          <h3 class="card_title_sm">내 취향 요약</h3>
+          <p class="sub">이번 달 내 취향은 이렇네요!</p>
+          <div class="bar_wrap">
+            <div class="bar_line">
+              <span>영화</span>
+              <div class="bar_track">
+                <div class="bar_fill bar_movie"></div>
+              </div><span>60%</span>
+            </div>
+            <div class="bar_line">
+              <span>음식</span>
+              <div class="bar_track">
+                <div class="bar_fill bar_food"></div>
+              </div><span>30%</span>
+            </div>
+            <div class="bar_line">
+              <span>패션</span>
+              <div class="bar_track">
+                <div class="bar_fill bar_fashion"></div>
+              </div>
+              <span>20%</span>
+            </div>
+            <div class="bar_line">
+              <span>놀거리</span>
+              <div class="bar_track">
+                <div class="bar_fill bar_play"></div>
+              </div>
+              <span>10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="taste_right">
+          <div class="taste_icon">
+            <img src="./images/main_img/main_menuimg1.png" alt="생선">
+          </div>
+          <div class="change_box">
+            <p class="change_title">이번 달 변화</p>
+            <p class="change_line up">
+              <span class="cl_label">영화</span>
+              <span class="cl_value">
+                <i class="fa-solid fa-arrow-up"></i> 12%</span>
+            </p>
+            <p class="change_line down">
+              <span class="cl_label">음식</span>
+              <span class="cl_value">
+                <i class="fa-solid fa-arrow-down"></i> 4%</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card_head">
+          <h3>친구목록</h3>
+          <a href="#">전체보기 ></a>
+        </div>
+        <p class="sub">함께 취향을 공유하는 친구들이에요!</p>
+        <div class="friend_list">
+          <div class="friend_item">
+            <span class="avatar_wrap">
+              <img src="./images/main_img/user1.png" alt="문선샘">
+            </span>
+            <p>문선샘</p>
+            <p class="match">취향일치 81%</p>
+            <button class="dm_btn main">
+              <i class="fa-solid fa-paper-plane"></i> DM</button>
+          </div>
+          <div class="friend_item">
+            <span class="avatar_wrap">
+              <img src="./images/main_img/user2.png" alt="경진샘">
+            </span>
+            <p>경진샘</p>
+            <p class="match">취향일치 99.9%</p>
+            <button class="dm_btn">
+              <i class="fa-solid fa-paper-plane"></i> DM</button>
+          </div>
+          <div class="friend_item">
+            <span class="avatar_wrap">
+              <img src="./images/main_img/user3.png" alt="재승샘">
+            </span>
+            <p>재승샘</p>
+            <p class="match">취향일치 92%</p>
+            <button class="dm_btn">
+              <i class="fa-solid fa-paper-plane"></i> DM</button>
+          </div>
+          <div class="friend_item">
+            <span class="avatar_wrap">
+              <img src="./images/main_img/user4.png" alt="현호샘">
+            </span>
+            <p>현호샘</p>
+            <p class="match">취향일치 99%</p>
+            <button class="dm_btn">
+              <i class="fa-solid fa-paper-plane"></i> DM</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card_head">
+          <h3>최근활동</h3><a href="#">전체보기 ></a>
+        </div>
+        <div class="activity_list">
+          <div class="activity_item">
+            <i class="fa-solid fa-bookmark"></i>
+            <span class="t">범죄도시5 저장</span>
+            <span class="time">2시간전</span>
+          </div>
+          <div class="activity_item">
+            <i class="fa-solid fa-clock"></i>
+            <span class="t">성수동 맛집 검색</span>
+            <span class="time">어제</span>
+          </div>
+          <div class="activity_item">
+            <i class="fa-solid fa-heart"></i>
+            <span class="t">여름 데일리룩 좋아요</span>
+            <span class="time">1일전</span>
+          </div>
+          <div class="activity_item">
+            <i class="fa-solid fa-bookmark"></i>
+            <span class="t">여수 노을명소 저장</span>
+            <span class="time">3일전</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row4">
+      <div class="card">
+        <div class="card_head">
+          <h3>추천친구</h3>
+          <a href="#">전체보기 ></a>
+        </div>
+        <div class="recommend_list">
+          <div class="recommend_item">
+            <img src="./images/main_img/user5.png" alt="옹달샘">
+            <div>
+              <p>덧샘</p>
+              <p class="match">취향일치 7%</p>
+            </div>
+            <button class="add_btn">
+              <i class="fa-solid fa-user-plus"></i> 친구추가</button>
+          </div>
+          <div class="recommend_item">
+            <img src="./images/main_img/user6.png" alt="한샘">
+            <div>
+              <p>뺄샘</p>
+              <p class="match">취향일치 85%</p>
+            </div>
+            <button class="add_btn disabled">
+              <i class="fa-solid fa-user-plus"></i> 친구추가</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card contact_card">
+        <div class="contact_icon">
+          <img src="./images/main_img/main_menuimg2.png" alt="">
+        </div>
+        <div class="contact_text">
+          <h3>문의 사항이 있으신가요?</h3>
+          <p>고객센터를 통해 문의하시면 빠르게 도와드릴게요.</p>
+        </div>
+        <button class="contact_btn">고객센터 바로가기 ▶</button>
+        <img src="./images/main_img/main_ch2.png" alt="고양이" class="mascot">
+      </div>
+    </div>
+    <!-- 계정설정 모달 -->
+    <div id="accModal">
+      <div class="acc_modal_box">
+        <div class="acc_modal_head">
+          <h2>계정설정</h2>
+          <button class="acc_modal_close" id="accModalClose">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="acc_section">
+          <h3 class="acc_section_title">닉네임 변경</h3>
+          <div class="acc_row">
+            <input type="text" class="acc_input" id="nicknameInput" placeholder="새 닉네임 입력">
+            <button class="acc_save_btn" id="nicknameSaveBtn">변경</button>
+          </div>
+          <p class="acc_hint" id="nicknameMsg"></p>
+        </div>
+
+        <div class="acc_section">
+          <h3 class="acc_section_title">비밀번호 변경</h3>
+          <div class="acc_col">
+            <input type="password" class="acc_input" id="pwCurrent" placeholder="현재 비밀번호">
+            <input type="password" class="acc_input" id="pwNew" placeholder="새 비밀번호">
+            <input type="password" class="acc_input" id="pwConfirm" placeholder="새 비밀번호 확인">
+            <button class="acc_save_btn" id="pwSaveBtn">변경</button>
+          </div>
+          <p class="acc_hint" id="pwMsg"></p>
+        </div>
+
+        <div class="acc_section">
+          <h3 class="acc_section_title">알림 설정</h3>
+          <div class="acc_toggle_list">
+            <div class="acc_toggle_item">
+              <span>추천 알림</span>
+              <label class="toggle_switch">
+                <input type="checkbox" checked>
+                <span class="toggle_slider"></span>
+              </label>
+            </div>
+            <div class="acc_toggle_item">
+              <span>친구 요청 알림</span>
+              <label class="toggle_switch">
+                <input type="checkbox" checked>
+                <span class="toggle_slider"></span>
+              </label>
+            </div>
+            <div class="acc_toggle_item">
+              <span>DM 알림</span>
+              <label class="toggle_switch">
+                <input type="checkbox">
+                <span class="toggle_slider"></span>
+              </label>
+            </div>
+            <div class="acc_toggle_item">
+              <span>이벤트/혜택 알림</span>
+              <label class="toggle_switch">
+                <input type="checkbox">
+                <span class="toggle_slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc_section acc_danger_zone">
+          <h3 class="acc_section_title danger">회원탈퇴</h3>
+          <p class="acc_warn">탈퇴 시 모든 데이터가 삭제되며 복구할 수 없어요.</p>
+          <button class="acc_delete_btn" id="deleteAccountBtn">회원탈퇴</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하단 메뉴 -->
+  <div class="bottom_menu">
+    <a href="./index2.html" target="_blank">
+      <article class="look">
+        <div class="txt">
+          <p class="card-title">오늘 뭐보지?</p>
+          <p class="card-desc">영화, 드라마, 예능까지<br>지금 볼 콘텐츠 찾기!</p>
+          <button class="card-arrow">→</button>
+        </div>
+        <div class="img">
+          <img src="./images/main_img/main_img1.png" alt="뭐보지?">
+        </div>
+      </article>
+    </a>
+
+    <a href="./indexw.html" target="_blank">
+      <article class="wear">
+        <div class="txt">
+          <p class="card-title">오늘 뭐입지?</p>
+          <p class="card-desc">날씨와 상황에 맞는<br>코디 추천!</p>
+          <button class="card-arrow">→</button>
+        </div>
+        <div class="img">
+          <img src="./images/main_img/main_img2.png" alt="뭐입지?">
+        </div>
+      </article>
+    </a>
+
+    <a href="./indexE.html" target="_blank">
+      <article class="eat">
+        <div class="txt">
+          <p class="card-title">오늘 뭐먹지?</p>
+          <p class="card-desc">메뉴 고민 끝!<br>맛집과 레시피 추천!</p>
+          <button class="card-arrow">→</button>
+        </div>
+        <div class="img">
+          <img src="./images/main_img/main_img3.png" alt="뭐먹지?">
+        </div>
+      </article>
+    </a>
+
+    <a href="./indexP.html" target="_blank">
+      <article class="do">
+        <div class="txt">
+          <p class="card-title">오늘 어디가지?</p>
+          <p class="card-desc">놀거리, 취미, 데이트 코스<br>까지오늘 할 일 추천!</p>
+          <button class="card-arrow">→</button>
+        </div>
+        <div class="img">
+          <img src="./images/main_img/main_img4.png" alt="뭐하지?">
+        </div>
+      </article>
+    </a>
+  </div>
+
+  <div class="main_wrap">
+    <div class="main_title">
+      <img src="./images/main_img/main_h1.png" alt="메인이름">
+      <img src="./images/main_img/main_desc.png" alt="메인 부제">
+    </div>
+
+    <div class="search_circle">
+      <div class="search_inner" id="searchTrigger">
+        <p>무엇을 찾고 있나요?</p>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="search_box">
+        <input type="text" placeholder="검색어 입력...">
+        <button>검색</button>
+      </div>
+    </div>
+
+    <div class="memo">
+      <p>
+        오늘의 나에게<br>
+        가장 좋은 선택을<br>
+        찾아보세요! :)
+      </p>
+    </div>
+
+    <div class="top10_wrap">
+      <article class="top_card pin1">
+        <div class="thumb">
+          <div class="swiper topSwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_1s.png" alt="장소1">
+                <img src="./images/main_img/ran1.png" alt="1등 왕관" class="crown">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_2s.png" alt="장소2">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_3s.png" alt="장소3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>인기 명소 TOP3</p>
+      </article>
+
+      <article class="top_card pin2">
+        <div class="thumb">
+          <div class="swiper topSwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_p1.png" alt="옷1">
+                <img src="./images/main_img/ran2.png" alt="1등 왕관" class="crown">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_p2.png" alt="옷2">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_p3.png" alt="옷3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>스타일 추천 TOP3</p>
+      </article>
+
+      <article class="top_card pin3">
+        <div class="thumb">
+          <div class="swiper topSwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_m1.png" alt="작품1">
+                <img src="./images/main_img/ran3.png" alt="1등 왕관" class="crown">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_m2.png" alt="작품2">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/rank_m3.png" alt="작품3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>작품 추천 TOP3</p>
+      </article>
+
+      <article class="top_card pin4">
+        <div class="thumb">
+          <div class="swiper topSwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/main_img/ani1.png" alt="애니1">
+                <img src="./images/main_img/ran4.png" alt="1등 왕관" class="crown">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/ani2.png" alt="애니2">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/main_img/ani3.png" alt="애니3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>애니 추천 TOP3</p>
+      </article>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>

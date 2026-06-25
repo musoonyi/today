@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 어디가지?</title>
+    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/all.css"> <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="./css/section/place.css">
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet"/> <!-- 맵 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="./css/section/place_media.css">
+    <link rel="icon" href="./images/main_img/main_ch2.png">
+</head>
+<body>
+    <div id="place_wrap">
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="header">
+                        <h1 class="logo">
+                            <a href="./index.html">
+                                <img src="./images/place/sub_logo.png" alt="서브페이지 로고이미지">
+                            </a>
+                        </h1>
+                        <div class="header_tit">오늘어디가지?</div>
+                        <div class="header_search">
+                            <input type="text" id="text" class="input_text" onkeydown="enterSearch(event)" autocomplete="off">
+                            <button type="button" class="sch" vlue="검색"
+                            onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <div class="Light">
+                            <a href="#">
+                                <img src="./images/place/light.png" alt="전구이미지">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="content_map">
+            <div class="container">
+                <div class="row">
+                    <div class="map">
+                        <div class="map_info">
+                            <div class="map_tit">
+                                <h2 class="Ph2">우리 동네 둘러보기</h2>
+                            </div>
+                            <div class="map_desc">
+                                <h3 class="Ph3">
+                                    지도에서 바로 찾는 오늘의 장소
+                                </h3>
+                            </div>
+                            <div class="map_search">
+                                <!-- <img src="./images/place/map_img.png" alt="맵임시이미지"> -->
+                                <input type="text" id="mtext" class="input_mtext" onkeydown="entermSearch(event)" placeholder="지역을 입력하세요." autocomplete="off">
+                                <button type="button" class="msch arrowBtn" vlue="맵검색" onclick="msearch()">
+                                    <i class="fa-solid fa-map"></i>
+                                </button>
+                            </div>
+                            <div class="map_category">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-solid fa-mug-saucer"></i>
+                                            <span>카페</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-solid fa-utensils"></i>
+                                            <span>맛집</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-solid fa-palette"></i>
+                                            <span>전시</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-regular fa-hand"></i>
+                                            <span>체험</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart-pulse"></i>
+                                            <span>데이트</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="map_filter">
+                                <button class="filter_more Ph5">필터 더보기 <em class="arrowBtn">▶</em></button>
+                                <div class="filter_panel">
+                                    <!-- 추가 필터 내용 -->
+                                    <label><input type="checkbox"><span>현재운영</span></label>
+                                    <label><input type="checkbox"><span>주차가능</span></label>
+                                    <label><input type="checkbox"><span>무료입장<span></label>
+                                    <label><input type="checkbox"><span>예약가능<span></label>
+                                    <label><input type="checkbox"><span>의료시설<span></label>
+                                    <label><input type="checkbox"><span>반려동물<span></label>
+                                    <label><input type="checkbox"><span>사진명소<span></label>
+                                    <label><input type="checkbox"><span>실내공간<span></label>     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map_view">
+                            <div id="Map">
+                                 <div id="map" style =" width : 800px; height: 360px; "></div>
+                            </div>
+                            <button class="map_nearby Ph5">
+                                <em class="arrowBtn">▼</em> 내 주변 보기
+                            </button>
+                            <div class="map_zoom">
+                                <button class="zoomin zoomBtn"><i class="fa-solid fa-plus"></i></button>
+                                <button class="zoomout zoomBtn"><i class="fa-solid fa-minus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="adTop">
+            <div class="container">
+                <div class="row">
+                    <div class="adtop">
+                        <div class="adtop_rail">
+                            <img src="./images/place/rail.png" alt="레일이미지">
+                        </div>
+                        <div class="adtop_carrier">
+                            <ul class="carrier_track">
+                                <li class="ca1 carri">
+                                    <img src="./images/place/carrier1.png" alt="캐리어이미지1">
+                                    <span>근처숙소<br>10% OFF</span>
+                                </li>
+                                <li class="ca2 carri">
+                                    <img src="./images/place/carrier2.png" alt="캐리어이미지2">
+                                    <span>Coffee 20%</span>
+                                </li>
+                                <li class="ca3 carri">
+                                    <img src="./images/place/carrier3.png" alt="캐리어이미지3">
+                                    <span>오늘<br>맛집<br>10%↓</span>
+                                </li>
+                                <li class="ca4 carri">
+                                    <img src="./images/place/carrier4.png" alt="캐리어이미지4">
+                                    <span>Activity<br>20% OFF</span>
+                                </li>
+                                <li class="ca5 carri">
+                                    <img src="./images/place/carrier5.png" alt="캐리어이미지5">
+                                    <span>지금 차<br>빌리면<br>20% ↓</span>
+                                </li>
+                                <li class="ca6 carri">
+                                    <img src="./images/place/carrier6.png" alt="캐리어이미지6">
+                                    <img src="./images/place/cat2.png" alt="캣이미지" class="cat">
+                                </li>
+                            </ul>
+                            <ul class="carrier_track">
+                                <li class="ca1 carri">
+                                    <img src="./images/place/carrier1.png" alt="캐리어이미지1">
+                                    <span>근처숙소<br>10% OFF</span>
+                                </li>
+                                <li class="ca2 carri">
+                                    <img src="./images/place/carrier2.png" alt="캐리어이미지2">
+                                    <span>Coffee 20%</span>
+                                </li>
+                                <li class="ca3 carri">
+                                    <img src="./images/place/carrier3.png" alt="캐리어이미지3">
+                                    <span>오늘<br>맛집<br>10% ↓</span>
+                                </li>
+                                <li class="ca4 carri">
+                                    <img src="./images/place/carrier4.png" alt="캐리어이미지4">
+                                    <span>Activity<br>20% OFF</span>
+                                </li>
+                                <li class="ca5 carri">
+                                    <img src="./images/place/carrier5.png" alt="캐리어이미지5">
+                                    <span>지금 차<br>빌리면<br>20% ↓</span>
+                                </li>
+                                <li class="ca6 carri">
+                                    <img src="./images/place/carrier6.png" alt="캐리어이미지6">
+                                    <img src="./images/place/cat2.png" alt="캣이미지" class="cat">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </section>
+        <section id="content_activity">
+            <div class="container clearfix">
+                <div class="row actrow1">
+                    <div class="act">
+                        <div class="act_tit Ph2">지금 가기 좋은 활동</div>
+                        <div class="act_tabmenu">
+                            <div class="act_tabBtn">
+                                <ul>
+                                    <li data-tab="all" class="active"><span>전체</span></li>
+                                    <li data-tab="rain"><span>비오는날</span></li>
+                                    <li data-tab="dawn"><span>새벽열린곳</span></li>
+                                    <li data-tab="date"><span>첫데이트</span></li>
+                                    <li data-tab="kids"><span>아이동행</span></li>
+                                </ul> 
+                            </div>
+                            <div class="swiper mySwiper act_tabCont">
+                                <div class="swiper-wrapper tabcon0 cont_all"></div>
+                                <div class="tabcon1 cont_all">
+                                    <li data-id="act1" data-tab="rain">
+                                        <a href="#">
+                                            <img src="./images/place/act_1s.png" alt="비오는날 이미지1">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">전시</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">아르테움 현대 미술관</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">감성과
+                                            영감을 채우는 문화 나들이
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">종로구 삼천동</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.7</strong>(183)
+                                        </div>
+                                        <div class="tag">지금인기!</div>
+                                    </li>
+                                    <li data-id="act2" data-tab="rain">
+                                        <a href="#">
+                                            <img src="./images/place/act_2s.png" alt="비오는날 이미지2">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">실내데이트</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">프리미엄 스파 벨루아</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">도심속에서 만나는 힐링 휴식
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">강남구 삼성동</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.9</strong>(126)
+                                        </div>
+                                    </li>
+                                    <li data-id="act3" data-tab="rain">
+                                        <a href="#">
+                                            <img src="./images/place/act_3s.png" alt="비오는날 이미지3">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">액티비티</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">더 클리프 클라이밍</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">비 오는 날에도 시원하게 즐기자
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">성수구 성수동</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.8</strong>(247)
+                                        </div>
+                                        <div class="tag">마감임박!</div>
+                                    </li>
+                                </div>
+                                <div class="tabcon2 cont_all">
+                                    <li data-id="act4" data-tab="dawn">
+                                        <a href="#">
+                                            <img src="./images/place/act_4s.png" alt="새벽열린곳 이미지1">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">휴식</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">새벽 루프탑 카페</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">도시가 깨어나기 전 즐기는 공간
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">용산구 해방촌</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.8</strong>(214)
+                                        </div>
+                                    </li>
+                                    <li data-id="act5" data-tab="dawn">
+                                        <a href="#">
+                                            <img src="./images/place/act_5s.png" alt="새벽열린곳 이미지2">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">건강</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">선라이즈 비치 워킹</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">가이드와 함께 새벽 해안산책
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">동해안 해변</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.8</strong>(423)
+                                        </div>
+                                        <div class="tag">마감임박!</div>
+                                    </li>
+                                    <li data-id="act6" data-tab="dawn">
+                                        <a href="#">
+                                            <img src="./images/place/act_6s.png" alt="새벽열린곳 이미지3">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">건강</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">리버뷰 모닝 요가</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">한강이 보이는 공간에서 하루 시작
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">서울 영등포구</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.9</strong>(176)
+                                        </div>
+                                        <div class="tag">조조할인!</div>
+                                    </li>
+                                </div>
+                                <div class="tabcon3 cont_all">
+                                    <li data-id="act7" data-tab="date">
+                                        <a href="#">
+                                            <img src="./images/place/act_7s.png" alt="첫데이트 이미지1">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">휴식</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">한강 피그닉 세트</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">도심 속 즐기는 감성 피크닉
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">여의도 한강공원</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.7</strong>(518)
+                                        </div>
+                                    </li>
+                                    <li data-id="act8" data-tab="date">
+                                        <a href="#">
+                                            <img src="./images/place/act_8s.png" alt="첫데이트 이미지2">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">실내데이트</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">도자기 원데이 클래스</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">함께 만드는 특별한 추억
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">성동구 성수동</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.9</strong>(287)
+                                        </div>
+                                        <div class="tag">커플인기!</div>
+                                    </li>
+                                    <li data-id="act9" data-tab="date">
+                                        <a href="#">
+                                            <img src="./images/place/act_9s.png" alt="첫데이트 이미지3">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">액티비티</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">노을 관람차 데이트</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">도심야경과 노을을 담는 특별한 시간
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">고양시 일산</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.8</strong>(641)
+                                        </div>
+                                        <div class="tag">사진명소!</div>
+                                    </li>
+                                </div>
+                                <div class="tabcon4 cont_all">
+                                    <li data-id="act10" data-tab="kids">
+                                        <a href="#">
+                                            <img src="./images/place/act_10s.png" alt="아이동행 이미지1">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">관람</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">쏭파 아쿠아리움</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">신비로운 바닷속 특별한 하루
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">송파구 롯데월드몰</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.8</strong>(1,254)
+                                        </div>
+                                        <div class="tag">지금인기!</div>
+                                    </li>
+                                    <li  data-id="act11" data-tab="kids">
+                                        <a href="#">
+                                            <img src="./images/place/act_11s.png" alt="아이동행 이미지2">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">체험</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">동물 체험 목장</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">귀여운 동물들과 교감하는 자연 체험
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">경기 용인시</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.7</strong>(386)
+                                        </div>
+                                        <div class="tag">재미유익!</div>
+                                    </li>
+                                    <li data-id="act12" data-tab="kids">
+                                        <a href="#">
+                                            <img src="./images/place/act_12s.png" alt="아이동행 이미지1">
+                                        </a>
+                                        <div class="actSlight slight"></div>
+                                        <div class="actLike like"></div>
+                                        <div class="act_item">관람</div>
+                                        <a href="#">
+                                            <h4 class="Ph4">어린이 과학관</h4>
+                                        </a>
+                                        <span class="act_desc Ph6">놀이처럼 배우는 흥미로운 과학
+                                        </span>
+                                        <div class="pin">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <em class="Ph6">경기 과천시</em>
+                                        </div>
+                                        <div class="star Ph6">
+                                            <i class="fa-solid fa-star"></i>
+                                            <strong>4.8</strong>(721)
+                                        </div>
+                                        <div class="tag">가족할인!</div>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="act_more arrowBtn">더 많은 활동 보기 <em class="arrowBtn">▼</em></button>
+                    </div>
+                </div>
+                <div class="row actrow2">
+                    <div class="act_view">
+                        <ul>
+                            <li data-id="act1" data-tab="rain" class="active">
+                                <a href="#">
+                                    <img src="./images/place/act_1.png" alt="비오는날 이미지1">
+                                </a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">전시</div>
+                                <div class="star Ph6">
+                                    <i class="fa-solid fa-star"></i>
+                                    <strong>4.7</strong>(183)
+                                </div>
+                                <a href="#">
+                                    <h4 class="Ph4">아르테움 현대 미술관</h4>
+                                </a>
+                                <div class="pin">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <em class="Ph6">서울 종로구 삼천동</em>
+                                </div>
+                                <span class="act_desc Ph6">조용한 전시 공간에서 다양한 작품을 감상하며 여유로운 시간을 보내세요.
+                                </span>
+                                <div class="info">
+                                    <ul>
+                                        <li>
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span>운영시간<br>
+                                                <em>10:00~18:00</em>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span>소요시간<br>
+                                                <em>약1~2시간</em>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-coins"></i>
+                                            <span>가격<br>
+                                                <em>￦15,000</em>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn">
+                                    <span>예약하기</span>
+                                </a>
+                            </li>
+                            <li data-id="act2" data-tab="rain">
+                                <a href="#"><img src="./images/place/act_2.png" alt="비 오는날 이미지2"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">실내데이트</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.9</strong>(126)</div>
+                                <a href="#"><h4 class="Ph4">프리미엄 스파 벨루아</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 강남구 삼성동</em></div>
+                                <span class="act_desc Ph6">비 내리는 풍경을 바라보며 따뜻한 물과 함께 몸과 마음을 편안하게 쉬어보세요.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>9:00~21:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약 1~2시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>45,000원</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act3" data-tab="rain">
+                                <a href="#"><img src="./images/place/act_3.png" alt="비 오는날 이미지3"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">액티비티</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.8</strong>(247)</div>
+                                <a href="#"><h4 class="Ph4">더 클리프 클라이밍</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 성동구 성수동</em></div>
+                                <span class="act_desc Ph6">흐린 날에도 쾌적한 실내공간에서 색다른 도전을 경험해 보세요. 초보자도 쉽게 참여가능!</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>10:00~22:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약 2시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦25,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act4" data-tab="dawn">
+                                <a href="#"><img src="./images/place/act_4.png" alt="새벽열린곳이미지1"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">휴식</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.8</strong>(214)</div>
+                                <a href="#"><h4 class="Ph4">새벽 루프탑 카페</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 용산구 해방촌 루프탑</em></div>
+                                <span class="act_desc Ph6">창밖으로 펼쳐지는 서울 야경과 새벽 하늘을 감상하며 커피한잔의 여유를 즐겨보세요.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>5:00~23:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em> 회원제</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦8,500~</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act5" data-tab="dawn">
+                                <a href="#"><img src="./images/place/act_5.png" alt="새벽 열린곳 이미지2"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">힐링</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.8</strong>(423)</div>
+                                <a href="#"><h4 class="Ph4">선라이즈 비치 워킹</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">동해안 해변 산책코스</em></div>
+                                <span class="act_desc Ph6">새벽 바다의 고요한 풍경을 감상하며 해안길을 따라 걷는 힐링 프로그램입니다.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>5:00~08:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약90분</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦12,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act6" data-tab="dawn">
+                                <a href="#"><img src="./images/place/act_6.png" alt="
+                                    새벽 열린곳 이미지3"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">건강</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.9</strong>(176)</div>
+                                <a href="#"><h4 class="Ph4">리버뷰 모닝 요가</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 영등포구 리버뷰 스튜디오</em></div>
+                                <span class="act_desc Ph6">새벽의 차분한 분위기 속에서 몸과 마음을 깨우는 힐링 요가 프로그램입니다.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>5:30~21:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약60분</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦18,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act7" data-tab="date">
+                                <a href="#"><img src="./images/place/act_7.png" alt=" 첫데이트 이미지1"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">힐링</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.7</strong>(518)</div>
+                                <a href="#"><h4 class="Ph4">한강 피크닉 세트</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 영등포구 여의도한강공원</em></div>
+                                <span class="act_desc Ph6">피크닉 매트와 간식 세트가 제공되어 가볍게 즐기기 좋은 인기 데이트 코스입니다.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>10:00~20:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약2시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦19,900</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act8" data-tab="date">
+                                <a href="#"><img src="./images/place/act_8.png" alt="첫 데이트 이미지2"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">실내데이트</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.9</strong>(287)</div>
+                                <a href="#"><h4 class="Ph4">도자기 원데이 클래스</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 성동구 성수동 공방거리</em></div>
+                                <span class="act_desc Ph6">초보자도 참여할 수 있는 체험형 클래스로 만든 작품은 기념품으로 가져갈 수 있습니다.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>11:00~21:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약2시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦35,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act9" data-tab="date">
+                                <a href="#"><img src="./images/place/act_9.png" alt="첫 데이트 이미지3"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">사진명소</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.8</strong>(641)</div>
+                                <a href="#"><h4 class="Ph4">노을 관람차 데이트</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">경기 고양시 일산 호수공원 인근</em></div>
+                                <span class="act_desc Ph6">천천히 회전하는 관람차에서 아름다운 노을과 야경을 감상할 수 있는 인기 데이트 코스.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>16:00~23:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약30분</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦15,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act10" data-tab="kids">
+                                <a href="#"><img src="./images/place/act_10.png" alt="아이동행이미지1"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">관람</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.8</strong>(1,254)</div>
+                                <a href="#"><h4 class="Ph4">쏭파 아쿠아리움</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">서울 송파구 롯데월드몰</em></div>
+                                <span class="act_desc Ph6">대형 수중터널과 다양한 해양생물을 관람할 수 있어 아이들에게 인기있는 체험공간입니다.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>10:00~20:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약2시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦29,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act11" data-tab="kids">
+                                <a href="#"><img src="./images/place/act_11.png" alt="아이동행이미지2"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">체험</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.7</strong>(386)</div>
+                                <a href="#"><h4 class="Ph4">동물 체험 목장</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">경기 용인시 농촌체험 목장</em></div>
+                                <span class="act_desc Ph6">양, 알파카, 토끼 등 다양한 동물들에게 먹이를 주며 자연속에서 특별한 추억을 만들어보세요.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>10:00~18:00</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>약2~3시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦18,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                            <li data-id="act12" data-tab="kids">
+                                <a href="#"><img src="./images/place/act_12.png" alt="아이동행이미지3"></a>
+                                <div class="actMlight mlight"></div>
+                                <div class="act_item">관람</div>
+                                <div class="star Ph6"><i class="fa-solid fa-star"></i><strong>4.8</strong>(721)</div>
+                                <a href="#"><h4 class="Ph4">어린이 과학관</h4></a>
+                                <div class="pin"><i class="fa-solid fa-location-dot"></i><em class="Ph6">경기 과천시 국립과천과학관 인근</em></div>
+                                <span class="act_desc Ph6">직접 만지고 체험하는 전시가 가득해 아이들의 호기심과 상상력을 키워주는 인기 체험 코스.</span>
+                                <div class="info">
+                                    <ul>
+                                        <li><i class="fa-regular fa-clock"></i><span>운영시간<br><em>9:30~17:30</em></span></li>
+                                        <li><i class="fa-regular fa-clock"></i><span>소요시간<br><em>2시간</em></span></li>
+                                        <li><i class="fa-solid fa-coins"></i><span>가격<br><em>￦10,000</em></span></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="bookBtn"><span>예약하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="content_ranking">
+            <div class="container">
+                <div class="row">
+                    <div class="ranking">
+                        <div class="rank">
+                            <div class="rank_tit Ph2">전국 Hot 플레이스</div>
+                            <h3 class="Ph3">
+                                지금 가장 핫한 장소들을 한 눈에 확인하고,
+                                <span>실제 여행객들의 리뷰도 참고해 보세요!</span>
+                            </h3>
+                            <div class="rankLight mlight"></div>
+                            <div class="top_img">
+                                <img src="./images/place/rank_1.png" alt="랭킹1위 이미지">
+                                <div class="rank_info">
+                                    <a href="#">
+                                        <h4 class="Ph4">블루 크레이터 전망대</h4>
+                                    </a>
+                                    <span class="act_desc Ph6">
+                                        강원태백 ㆍ 관광지
+                                    </span>
+                                    <div class="star Ph6">
+                                        <i class="fa-solid fa-star"></i>
+                                        <strong>4.9</strong>(2,284)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rank_comentBtn"><em></em></div>
+                            <div class="rank_comments">
+                                <span>댓글<em>284</em></span>
+                                <div class="avatar"></div>
+                                <p>여행 중 가장 기억에 남는 장소였어요. 어디서 찍어도 사진이 잘 나와서 친구들이랑 사진 찍기추천!</p>
+                                <em>✕</em>
+                            </div>
+                        </div>
+                        <div class="rank_lists">
+                            <div class="allBtn Ph5">
+                                <a href="#">전체보기 <em class="arrowBtn">▼</em>
+                                </a>
+                            </div>
+                            <div class="rank_div swiper mySwiper2">
+                                <div class="rank_ul swiper-wrapper">
+                                    <div class="rank_li swiper-slide">
+                                        <img src="./images/place/rank_2s.png" alt="랭킹2위 이미지">
+                                        <div class="rank_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">헤리티지 가든 스트리트</h4>
+                                            </a>
+                                            <span class="act_desc Ph6">
+                                                전주 ㆍ 전통거리
+                                            </span>
+                                            <div class="star Ph6">
+                                                <i class="fa-solid fa-star"></i>
+                                                <strong>4.9</strong>(1,932)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rank_li swiper-slide">
+                                        <img src="./images/place/rank_3s.png" alt="랭킹3위 이미지">
+                                        <div class="rank_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">선셋 아일랜드 브리지</h4>
+                                            </a>
+                                            <span class="act_desc Ph6">
+                                                여수 ㆍ 노을명소
+                                            </span>
+                                            <div class="star Ph6">
+                                                <i class="fa-solid fa-star"></i>
+                                                <strong>4.8</strong>(2,031)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rank_li swiper-slide">
+                                        <img src="./images/place/rank_4s.png" alt="랭킹4위 이미지">
+                                        <div class="rank_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">센트럴 리버프론트</h4>
+                                            </a>
+                                            <span class="act_desc Ph6">
+                                                서울 ㆍ 강변야경
+                                            </span>
+                                            <div class="star Ph6">
+                                                <i class="fa-solid fa-star"></i>
+                                                <strong>4.7</strong>(1,547)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rank_li swiper-slide">
+                                        <img src="./images/place/rank_5s.png" alt="랭킹2위 이미지">
+                                        <div class="rank_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">구름 전망 스카이워</h4>
+                                            </a>
+                                            <span class="act_desc Ph6">
+                                                강원평창 ㆍ 인생샷
+                                            </span>
+                                            <div class="star Ph6">
+                                                <i class="fa-solid fa-star"></i>
+                                                <strong>4.8</strong>(1,127)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rank_li swiper-slide">
+                                        <img src="./images/place/rank_6s.png" alt="랭킹3위 이미지">
+                                        <div class="rank_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">해안 절벽 산책길</h4>
+                                            </a>
+                                            <span class="act_desc Ph6">
+                                                부산기장 ㆍ 전망명소
+                                            </span>
+                                            <div class="star Ph6">
+                                                <i class="fa-solid fa-star"></i>
+                                                <strong>4.7</strong>(1,064)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rank_li swiper-slide">
+                                        <img src="./images/place/rank_7s.png" alt="랭킹4위 이미지">
+                                        <div class="rank_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">궁궐 야간 개장</h4>
+                                            </a>
+                                            <span class="act_desc Ph6">
+                                                종로 ㆍ 한복대여
+                                            </span>
+                                            <div class="star Ph6">
+                                                <i class="fa-solid fa-star"></i>
+                                                <strong>4.8</strong>(943)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="content_event">
+            <div class="container">
+                <div class="row">
+                    <div class="event">
+                        <div class="event_tit Ph2">트렌드 스팟 & POP-UP</div>
+                        <div class="event_desc Ph3">새로운 트렌드와 특별한 공간을 경험해 보세요!</div>
+                        <div class="event_lists">
+                            <div class="eventBtn Ph5">
+                                <a href="#">전체보기 <em class="arrowBtn">▼</em>
+                                </a>
+                            </div>
+                            <div class="event_div swiper mySwiper3">
+                                <div class="event_ul swiper-wrapper">
+                                    <div class="event_li swiper-slide">
+                                        <a href="#"><img src="./images/place/event_1.png" alt="이벤트 이미지1"></a>
+                                        <div class="event_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">스타라이트 팬 페스티벌</h4>
+                                            </a>
+                                            <span class="event_Dday Ph6">06.15~07.14</span>
+                                            <div class="pin">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <em class="Ph6">성수동 팝업 스퀘어</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_li swiper-slide">
+                                        <a href="#"><img src="./images/place/event_2.png" alt="이벤트 이미지2"></a>
+                                        <div class="event_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">블루 포레스트 퍼퓸하우스</h4>
+                                            </a>
+                                            <span class="event_Dday Ph6">06.18~07.20</span>
+                                            <div class="pin">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <em class="Ph6">성수동 아트팩토리</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_li swiper-slide">
+                                        <a href="#"><img src="./images/place/event_3.png" alt="이벤트 이미지3"></a>
+                                        <div class="event_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">드림베어하우스</h4>
+                                            </a>
+                                            <span class="event_Dday Ph6">06.20~08.10</span>
+                                            <div class="pin">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <em class="Ph6">잠실 롯데월드몰 1F</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_li swiper-slide">
+                                        <a href="#"><img src="./images/place/event_4.png" alt="이벤트 이미지4"></a>
+                                        <div class="event_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">2026 썸머컬렉션 스튜디오</h4>
+                                            </a>
+                                            <span class="event_Dday Ph6">06.12~07.31</span>
+                                            <div class="pin">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <em class="Ph6">THE현대 서울 5F</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_li swiper-slide">
+                                        <a href="#"><img src="./images/place/event_5.png" alt="이벤트 이미지5"></a>
+                                        <div class="event_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">스위티 디저트 마켓</h4>
+                                            </a>
+                                            <span class="event_Dday Ph6">06.21~06.30</span>
+                                            <div class="pin">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <em class="Ph6">연남동 크리에이티브홀</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_li swiper-slide">
+                                        <a href="#"><img src="./images/place/event_6.png" alt="이벤트 이미지6"></a>
+                                        <div class="event_info">
+                                            <a href="#">
+                                                <h4 class="Ph4">선셋 루프탑 나이트마켓</h4>
+                                            </a>
+                                            <span class="event_Dday Ph6">06.21~09.01</span>
+                                            <div class="pin">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <em class="Ph6">한남동 리버뷰 루프탑</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="adBottom">
+            <div class="container">
+                <div class="row">
+                    <div class="adbottom">
+                        <div class="ad_subtit"><em>참여만 해도 기회</em></div>
+                        <div class="ad_tit">
+                            <h2 class="Ph2">어디로 가든지 선물로 떠나는 특별한 하루!</h2>
+                        </div>
+                        <span class="ad_desc">여행부터 놀이공원, 카페까지 다양한 선물을 드려요♥</span>
+                        <strong class="ad_Dday Ph6">*선물 소진시 이벤트 종료</strong>
+                        <img src="./images/place/ad_img1.png" alt="광고이미지">
+                        <a href="#" class="raffleBtn">
+                        <span>추첨하러<em>바로가기</em></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container">
+                <footer class="footer">
+                    <div class="footer_top">
+
+                        <div class="footer_logo">
+                            <h2>오늘뭐하지?</h2>
+                            <p>당신의 취향을 더 잘 이해하는 오늘 뭐하지!</p>
+
+                            <ul class="footer_icons">
+                                <li><i class="fa-regular fa-bookmark"></i><span>맞춤추천</span></li>
+                                <li><i class="fa-regular fa-heart"></i><span>인기순위</span></li>
+                                <li><i class="fa-regular fa-clock"></i><span>나의기록</span></li>
+                                <li><i class="fa-regular fa-bell"></i><span>알림설정</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer_menu">
+                                <h3>서비스</h3>
+                                <a href="./index2.html">오늘뭐보지?</a>
+                                <a href="./indexE.html">오늘뭐먹지?</a>
+                                <a href="./indexw.html">오늘뭐입지?</a>
+                                <a href="./indexP.html">오늘어디가지?</a>
+                                <a href="#">TOP10</a>
+                            </div>
+                            <div class="footer_menu">
+                                <h3>카테고리</h3>
+                                <a href="#content_map">우리동네 둘러보기</a>
+                                <a href="#content_activity">지금가기 좋은장소 </a>
+                                <a href="#content_ranking">전국 Hot플레이스</a>
+                                <a href="#content_event">트렌드 스팟</a>
+                                <a href="#adBottom">이벤트</a>
+                            </div>
+                            <div class="footer_menu">
+                                <h3>Partners</h3>
+                                <a href="#">Airbna</a>
+                                <a href="#">스타북스 코리아</a>
+                                <a href="#">까치테이블</a>
+                                <a href="#">콜룩</a>
+                                <a href="#">소카</a>
+                            </div>
+                            <div class="footer_menu">
+                                <h3>고객센터</h3>
+                                <a href="#">공지사항</a>
+                                <a href="#">자주 묻는 질문</a>
+                                <a href="#">문의하기</a>
+                                <a href="#">이용약관</a>
+                                <a href="#">개인정보처리방침</a>
+                            </div>
+
+                    </div>
+
+                    <div class="footer_middle">
+                        <div class="company_info">
+                            <p>(주) 오늘뭐하지? | 대표이사 : 김콘텐츠</p>
+                            <p>사업자등록번호 : 123-45-67890 &nbsp; &nbsp;통신판매업신고 : 2026-서울한국-0601</p>
+                            <p>주소 : 서울특별시 양천구 55길 13 101호</p>
+                            <p>이메일 : alsrb012900@naver.com &nbsp; &nbsp; 고객센터 : 010-2335-1485</p>
+                        </div>
+
+                        <div class="newsletter">
+                            <h4>새로운 콘텐츠 소식 받기</h4>
+
+                            <div class="input_box">
+                                <input type="email" placeholder="이메일 입력">
+                                <button>구독</button>
+                            </div>
+
+                            <div class="sns">
+                                <i class="fa-brands fa-instagram"></i>
+                                <i class="fa-brands fa-youtube"></i>
+                                <i class="fa-brands fa-x-twitter"></i>
+                                <i class="fa-brands fa-blogger"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </footer>
+
+            </div>
+            <div class="subfooter">
+                <div class="footer_bottom">
+                    <p>©2026 오늘 뭐하지? All rights reserved.</p>
+
+                    <div class="footer_link">
+                        <a href="#">사이트맵</a>
+                        <a href="#">제휴문의</a>
+                        <a href="#">광고문의</a>
+                    </div>
+
+                    <button class="top_btn" id="topBtn">
+                        <img src="./images/place/foot_btn.png" alt="버튼이미지">
+                        <span>TOP</span>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- 룰렛 팝업 -->
+    <div id="rafflePopup" class="raffle_popup">
+        <div class="popup">
+            <!-- 배경 -->
+            <div class="raffle">
+                <div class="roulette_pin">
+                    <img src="./images/place/raffle_img3.png" alt="당첨 핀">
+                </div>
+                <div class="roulette_wheel" id="rouletteWheel">
+                    <img src="./images/place/raffle_img2.png" alt="룰렛판">
+                </div>
+                <button class="spinBtn" id="spinBtn">
+                    <img src="./images/place/raffle_img4.png" alt="룰렛버튼">
+                    <span>start <img src="./images/place/raffle_light.png" alt=""></span>
+                </button>
+                <button class="closeBtn" id="closePopup">✕</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> <!-- 스와이퍼 -->
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script> <!-- 맵 -->
+    <script src="./js/place.js"></script>
+    
+
+    <script>
+        
+    </script>
+</body>
+</html>

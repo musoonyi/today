@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+:root {
+	--mainEng-font: "Noto Sans";
+	--mainKor-font: "Noto Sans KR";
+	--mainNum-font: 'OngleipKonkon';
+
+	--bg-main: #fcf2eb;
+	
+	--bg-watch: #ebd6f0;
+	--bg-wear: #dae1ed; 
+	--bg-food: #fee9bb; 
+	--bg-place: #e2e7d1; 
+
+	--btn-watch: #dbb5f8;
+	--btn-wear: #a1c9f6; 
+	--btn-food: #fcc249; 
+	--btn-place: #afd491; 
+
+	--tit-watch: #9c00ff;
+	--tit-wear1: #00fffc;
+	--tit-wear2: #006cff;
+	--tit-food: #ffc600; 
+	--tit-place: #00ffba; 
+	
+	--icon-color: #dbc698;
+	--icon-star: #ffcc33;
+	--text-love: #ff6666;
+
+	
+	--gray-900: #1C1C1C;
+	--gray-800: #383838;
+	--gray-700: #515151;
+	--gray-600: #686868;
+	--gray-300: #C8C8C8;
+	--gray-100: #e6e6e6;
+
+	--bg-main: #fcf2eb;
+    --black: #000;
+    --white: #fff;
+    --card-bg: #f9ddbc;
+    --text-color: #111;
+	--footer-back: #f6f1ea;
+
+
+	/* 박스쉐도우 설정 */
+	--shadow-primary: 0 2px 10px rgba(0, 0, 0, 0.25);
+	--shadow-soft: 0 5px 10px rgba(0, 0, 0, 0.05);
+
+
+	/* 기본 폰트 설정 */
+	font-family: var(--mainEng-font), var(--mainKor-font);
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+
+	
+	/* 아이폰 가로 모드에서 글씨 확대 금지 */
+	-webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 800px) {
+	:root {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--bg-main);
+	transition: 0.4s;
+}
+body.dark {
+    --bg-main: #121212;
+    --black: #ffffff;
+    --white: #1f1f1f;
+    --card-bg: #2b2b2b;
+    --text-color: #ffffff;
+	--footer-back: #1f1f1f;
+}
+body.dark #header{
+    background-color: #333;
+}
+body.dark .header .header_search{
+    background-color: #fff;
+}
+body.dark .header .header_search .input_text{
+    color: #000;
+}
+body.dark .header .header_search .sch{
+    color: #555;
+}
+body.dark .footer_menu a{
+	color: #777;
+}
+body.dark .company_info{
+	color: #777;
+}
+body.dark .footer_bottom{
+	color: #777;
+}
+body.dark .footer_link a{
+	color: #777;
+}
+body.dark .swiper-button-next::before {background-color: transparent;}
+body.dark .swiper-button-prev::before {background-color: transparent;     backdrop-filter: blur(0);}
